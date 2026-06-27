@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comment ça marche – Processus de prêt simplifié | FINAVIA</title>
+  <meta name="description" content="Découvrez comment obtenir votre prêt FINAVIA en 4 étapes simples : demande en ligne, analyse rapide, proposition personnalisée et déblocage des fonds sous 72h.">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <!-- =============================================
+       PRÉCHARGEUR DE PAGE
+       Logo + anneau qui tourne une seule fois, puis disparaît.
+       Animation 100% CSS, aucun impact sur les performances
+       (voir css/main.css section 30 et js/main.js initPageLoader()).
+       ============================================= -->
+  <div class="page-loader" id="pageLoader" role="presentation" aria-hidden="true">
+    <div class="page-loader-stage">
+      <div class="page-loader-ring"></div>
+      <img src="assets/images/logo-full.webp" class="page-loader-logo" alt="">
+    </div>
+  </div>
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="header-logo"><img src="assets/images/logo-full.webp" class="logo-full--header" alt="FINAVIA"></a>
+      <nav class="header-nav"><ul class="nav-list">
+        <li><a href="index.html" class="nav-link" data-i18n="nav.home">Accueil</a></li>
+        <li><a href="nos-prets.html" class="nav-link" data-i18n="nav.loans">Nos Prêts</a></li>
+        <li><a href="comment-ca-marche.html" class="nav-link" data-i18n="nav.howItWorks">Comment ça marche</a></li>
+        <li><a href="a-propos.html" class="nav-link" data-i18n="nav.about">À Propos</a></li>
+        <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+      </ul></nav>
+      <div class="header-actions">
+        <div class="lang-switcher" id="langSwitcher">
+          <button class="lang-current" id="langCurrent" aria-haspopup="true" aria-expanded="false">
+            <span class="lang-flag" id="currentFlag">🇫🇷</span><span class="lang-code" id="currentCode">FR</span>
+            <svg class="lang-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="lang-dropdown" id="langDropdown" role="menu">
+            <button class="lang-option" data-lang="fr">🇫🇷 Français</button>
+            <button class="lang-option" data-lang="es">🇪🇸 Español</button>
+            <button class="lang-option" data-lang="de">🇩🇪 Deutsch</button>
+            <button class="lang-option" data-lang="pt">🇵🇹 Português</button>
+            <button class="lang-option" data-lang="it">🇮🇹 Italiano</button>
+          </div>
+        </div>
+        <a href="demande-de-pret.html" class="btn btn-primary btn-sm" data-i18n="nav.apply">Demande</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+    </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu-inner">
+        <div class="mobile-menu-header">
+          <a href="index.html" class="header-logo"><img src="assets/images/logo-full.webp" class="logo-full--sm" alt="FINAVIA"></a>
+          <button class="mobile-menu-close" id="mobileClose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        </div>
+        <nav><ul class="mobile-nav-list">
+          <li><a href="index.html" class="mobile-nav-link" data-i18n="nav.home">Accueil</a></li>
+          <li><a href="nos-prets.html" class="mobile-nav-link" data-i18n="nav.loans">Nos Prêts</a></li>
+          <li><a href="comment-ca-marche.html" class="mobile-nav-link" data-i18n="nav.howItWorks">Comment ça marche</a></li>
+          <li><a href="a-propos.html" class="mobile-nav-link" data-i18n="nav.about">À Propos</a></li>
+          <li><a href="contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contact</a></li>
+          <li><a href="demande-de-pret.html" class="mobile-nav-link mobile-cta" data-i18n="nav.apply">Demande de Prêt</a></li>
+        </ul></nav>
+        <div class="mobile-lang-section"><p class="mobile-lang-title">Langue</p>
+          <div class="mobile-lang-grid">
+            <button class="mobile-lang-btn active" data-lang="fr">🇫🇷 FR</button>
+            <button class="mobile-lang-btn" data-lang="es">🇪🇸 ES</button>
+            <button class="mobile-lang-btn" data-lang="de">🇩🇪 DE</button>
+            <button class="mobile-lang-btn" data-lang="pt">🇵🇹 PT</button>
+            <button class="mobile-lang-btn" data-lang="it">🇮🇹 IT</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="container page-hero-content">
+        <span class="page-hero-badge" data-i18n="how.page.hero.badge">Processus simplifié</span>
+        <h1 class="page-hero-title" data-i18n="how.page.hero.title">Comment fonctionne FINAVIA ?</h1>
+        <p class="page-hero-subtitle" data-i18n="how.page.hero.subtitle">Un processus entièrement digital, transparent et rapide pour obtenir votre financement en toute sérénité.</p>
+        <nav class="breadcrumb"><a href="index.html" data-i18n="nav.home">Accueil</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current" data-i18n="nav.howItWorks">Comment ça marche</span></nav>
+      </div>
+    </section>
+
+    <!-- STATS RAPIDES -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item"><span class="stat-value" data-counter="5">5</span><span class="stat-suffix">min</span><p class="stat-label">Pour compléter le formulaire</p></div>
+          <div class="stat-item"><span class="stat-value" data-counter="24">24</span><span class="stat-suffix">h</span><p class="stat-label">Délai d'analyse de dossier</p></div>
+          <div class="stat-item"><span class="stat-value" data-counter="72">72</span><span class="stat-suffix">h</span><p class="stat-label">Virement des fonds max.</p></div>
+          <div class="stat-item"><span class="stat-value" data-counter="94">94</span><span class="stat-suffix">%</span><p class="stat-label">Taux d'approbation</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESSUS DÉTAILLÉ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge" data-i18n="how.badge">Notre processus</span>
+          <h2 class="section-title" data-i18n="how.title">Simple, rapide et transparent</h2>
+          <p class="section-subtitle" data-i18n="how.subtitle">Nous avons conçu un processus clair et efficace pour vous offrir la meilleure expérience possible.</p>
+        </div>
+
+        <div class="process-timeline">
+          <!-- ÉTAPE 1 -->
+          <div class="process-step">
+            <div class="process-step-number">1</div>
+            <div class="process-step-content">
+              <h3 class="process-step-title" data-i18n="how.page.step1.title">1. Faites votre demande en ligne</h3>
+              <p class="process-step-desc" data-i18n="how.page.step1.desc">Remplissez notre formulaire de demande en ligne en seulement 5 minutes. Aucun déplacement nécessaire, aucun rendez-vous en agence. Indiquez votre projet, le montant souhaité et votre situation personnelle.</p>
+              <div class="process-step-details">
+                <div class="process-step-detail" data-i18n="how.page.step1.d1">Formulaire intuitif en 3 étapes</div>
+                <div class="process-step-detail" data-i18n="how.page.step1.d2">Téléchargement des documents sécurisé</div>
+                <div class="process-step-detail" data-i18n="how.page.step1.d3">Disponible 24h/24, 7j/7</div>
+              </div>
+              <div class="cld-photo process-step-img" data-cld="finavia/process/step1" data-cld-w="700" style="--cld-ratio:16/9;" role="img" data-i18n-aria="how.page.step1.imgalt" aria-label="Illustration étape 1">
+                <div class="cld-photo-placeholder">
+                  <span class="cld-photo-placeholder-icon">🖥️</span>
+                  <span class="cld-photo-placeholder-text" data-i18n="home.gallery.placeholder">Image à venir</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ÉTAPE 2 -->
+          <div class="process-step">
+            <div class="process-step-number">2</div>
+            <div class="process-step-content">
+              <h3 class="process-step-title" data-i18n="how.page.step2.title">2. Analyse de votre dossier</h3>
+              <p class="process-step-desc" data-i18n="how.page.step2.desc">Notre équipe d'experts financiers analyse votre dossier avec soin et réactivité. Nous étudions votre profil de manière globale pour trouver la meilleure solution de financement.</p>
+              <div class="process-step-details">
+                <div class="process-step-detail" data-i18n="how.page.step2.d1">Analyse en moins de 24 heures ouvrées</div>
+                <div class="process-step-detail" data-i18n="how.page.step2.d2">Évaluation personnalisée et bienveillante</div>
+                <div class="process-step-detail" data-i18n="how.page.step2.d3">Possibilité de complément de dossier</div>
+              </div>
+              <div class="cld-photo process-step-img" data-cld="finavia/process/step2" data-cld-w="700" style="--cld-ratio:16/9;" role="img" data-i18n-aria="how.page.step2.imgalt" aria-label="Illustration étape 2">
+                <div class="cld-photo-placeholder">
+                  <span class="cld-photo-placeholder-icon">🔎</span>
+                  <span class="cld-photo-placeholder-text" data-i18n="home.gallery.placeholder">Image à venir</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ÉTAPE 3 -->
+          <div class="process-step">
+            <div class="process-step-number">3</div>
+            <div class="process-step-content">
+              <h3 class="process-step-title" data-i18n="how.page.step3.title">3. Proposition personnalisée</h3>
+              <p class="process-step-desc" data-i18n="how.page.step3.desc">Si votre dossier est accepté, vous recevez une proposition de financement sur mesure, détaillant le taux, les mensualités et les conditions. Vous avez tout le temps nécessaire pour l'examiner.</p>
+              <div class="process-step-details">
+                <div class="process-step-detail" data-i18n="how.page.step3.d1">Offre claire et détaillée par email</div>
+                <div class="process-step-detail" data-i18n="how.page.step3.d2">Délai de réflexion de 14 jours</div>
+                <div class="process-step-detail" data-i18n="how.page.step3.d3">Signature électronique sécurisée</div>
+              </div>
+              <div class="cld-photo process-step-img" data-cld="finavia/process/step3" data-cld-w="700" style="--cld-ratio:16/9;" role="img" data-i18n-aria="how.page.step3.imgalt" aria-label="Illustration étape 3">
+                <div class="cld-photo-placeholder">
+                  <span class="cld-photo-placeholder-icon">🤝</span>
+                  <span class="cld-photo-placeholder-text" data-i18n="home.gallery.placeholder">Image à venir</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ÉTAPE 4 -->
+          <div class="process-step">
+            <div class="process-step-number">4</div>
+            <div class="process-step-content">
+              <h3 class="process-step-title" data-i18n="how.page.step4.title">4. Déblocage des fonds</h3>
+              <p class="process-step-desc" data-i18n="how.page.step4.desc">Après votre acceptation et la signature électronique du contrat, les fonds sont virés directement sur votre compte bancaire. Simple, rapide, efficace.</p>
+              <div class="process-step-details">
+                <div class="process-step-detail" data-i18n="how.page.step4.d1">Virement sous 24 à 72 heures</div>
+                <div class="process-step-detail" data-i18n="how.page.step4.d2">Notification par email et SMS</div>
+                <div class="process-step-detail" data-i18n="how.page.step4.d3">Accès à votre espace client</div>
+              </div>
+              <div class="cld-photo process-step-img" data-cld="finavia/process/step4" data-cld-w="700" style="--cld-ratio:16/9;" role="img" data-i18n-aria="how.page.step4.imgalt" aria-label="Illustration étape 4">
+                <div class="cld-photo-placeholder">
+                  <span class="cld-photo-placeholder-icon">✅</span>
+                  <span class="cld-photo-placeholder-text" data-i18n="home.gallery.placeholder">Image à venir</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AVANTAGES DU PROCESSUS -->
+    <section class="section section--green">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Nos engagements</span>
+          <h2 class="section-title">Pourquoi choisir FINAVIA ?</h2>
+        </div>
+        <div class="advantages-grid">
+          <div class="advantage-card"><div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3 class="advantage-title">Rapidité</h3><p class="advantage-desc">Réponse garantie en moins de 24 heures ouvrées. Les fonds disponibles sous 72h après acceptation.</p></div>
+          <div class="advantage-card"><div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3 class="advantage-title">Sécurité</h3><p class="advantage-desc">Chiffrement SSL, conformité RGPD, authentification forte. Vos données sont protégées à chaque étape.</p></div>
+          <div class="advantage-card"><div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div><h3 class="advantage-title">Transparence</h3><p class="advantage-desc">Taux clairs, frais explicités, aucun frais caché. Vous savez exactement ce que vous signez avant de vous engager.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="container cta-inner">
+        <h2 class="section-title" data-i18n="cta.title">Prêt à commencer ?</h2>
+        <p class="section-subtitle" data-i18n="cta.subtitle">Faites votre demande en 5 minutes et obtenez une réponse sous 24h.</p>
+        <div class="cta-buttons">
+          <a href="demande-de-pret.html" class="btn btn-primary btn-lg" data-i18n="cta.button">Faire une demande</a>
+          <a href="contact.html" class="btn btn-outline-white btn-lg" data-i18n="cta.button2">Nous contacter</a>
+        </div>
+        <p class="cta-note" data-i18n="cta.note">Sans engagement • Réponse en 24h • 100% Sécurisé</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo"><img src="assets/images/logo-full.webp" class="logo-full--sm" alt="FINAVIA"></a>
+          <p class="footer-tagline" data-i18n="footer.tagline">Votre partenaire financier de confiance</p>
+        </div>
+        <div class="footer-col"><h3 class="footer-heading" data-i18n="footer.links">Liens rapides</h3><ul class="footer-links"><li><a href="index.html" data-i18n="nav.home">Accueil</a></li><li><a href="nos-prets.html" data-i18n="nav.loans">Nos Prêts</a></li><li><a href="a-propos.html" data-i18n="nav.about">À Propos</a></li><li><a href="contact.html" data-i18n="nav.contact">Contact</a></li></ul></div>
+        <div class="footer-col"><h3 class="footer-heading" data-i18n="footer.services">Nos services</h3><ul class="footer-links"><li><a href="nos-prets.html#personnel" data-i18n="service.personal.title">Prêt Personnel</a></li><li><a href="nos-prets.html#auto" data-i18n="service.auto.title">Prêt Auto</a></li><li><a href="nos-prets.html#immo" data-i18n="service.immo.title">Prêt Immobilier</a></li></ul></div>
+        <div class="footer-col"><h3 class="footer-heading" data-i18n="footer.legal">Légal</h3><ul class="footer-links"><li><a href="#" data-i18n="footer.privacy">Confidentialité</a></li><li><a href="#" data-i18n="footer.terms">CGU</a></li><li><a href="#" data-i18n="footer.legal_notice">Mentions légales</a></li></ul></div>
+        <div class="footer-col"><h3 class="footer-heading" data-i18n="footer.newsletter">Newsletter</h3><p class="footer-newsletter-desc" data-i18n="footer.newsletter.desc">Recevez nos offres.</p><div class="newsletter-form"><input type="email" class="newsletter-input" id="newsletterEmail" placeholder="Email"><button class="newsletter-btn" id="newsletterBtn" data-i18n="footer.newsletter.btn">S'abonner</button></div></div>
+      </div>
+      <div class="footer-bottom"><p class="footer-copy">© <span id="currentYear">2024</span> FINAVIA. <span data-i18n="footer.rights">Tous droits réservés</span>.</p></div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/cloudinary.js"></script>
+</body>
+</html>

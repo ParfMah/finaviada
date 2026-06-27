@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FINAVIA – Prêts en ligne rapides et sécurisés en Europe</title>
+  <meta name="description" content="FINAVIA, votre partenaire financier de confiance. Prêts personnels, auto, immobiliers et regroupement de crédits en France, Espagne, Allemagne, Portugal et Italie. Réponse en 24h.">
+  <meta name="keywords" content="prêt en ligne, crédit rapide, financement Europe, prêt personnel, FINAVIA">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.finavia.eu/">
+
+  <!-- Open Graph / Réseaux sociaux -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.finavia.eu/">
+  <meta property="og:title" content="FINAVIA – Votre partenaire financier en Europe">
+  <meta property="og:description" content="Solutions de financement adaptées : prêts personnels, auto, immobiliers. Réponse en 24h, 100% sécurisé, sans engagement.">
+  <meta property="og:image" content="assets/og-image.webp">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Schema.org - Organisation -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FinancialService",
+    "name": "FINAVIA",
+    "description": "Plateforme de prêts en ligne sécurisée opérant en Europe",
+    "url": "https://www.finavia.eu",
+    "logo": "https://www.finavia.eu/assets/logo.svg",
+    "telephone": "+33123456789",
+    "email": "contact@finavia.eu",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "15 Avenue des Champs-Élysées",
+      "addressLocality": "Paris",
+      "postalCode": "75008",
+      "addressCountry": "FR"
+    },
+    "areaServed": ["FR","ES","DE","PT","IT","CH","BE","MC","LU"],
+    "serviceType": ["Personal Loan","Auto Loan","Mortgage","Debt Consolidation"]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- =============================================
+       PRÉCHARGEUR DE PAGE
+       Logo + anneau qui tourne une seule fois, puis disparaît.
+       Animation 100% CSS, aucun impact sur les performances
+       (voir css/main.css section 30 et js/main.js initPageLoader()).
+       ============================================= -->
+  <div class="page-loader" id="pageLoader" role="presentation" aria-hidden="true">
+    <div class="page-loader-stage">
+      <div class="page-loader-ring"></div>
+      <img src="assets/images/logo-full.webp" class="page-loader-logo" alt="">
+    </div>
+  </div>
+  <!-- Skip to content (accessibilité) -->
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+  <!-- Overlay menu mobile -->
+  <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
+
+  <!-- =============================================
+       HEADER - NAVIGATION
+       ============================================= -->
+  <header class="site-header" id="site-header" role="banner">
+    <div class="container header-inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="header-logo" aria-label="FINAVIA - Accueil">
+        <img src="assets/images/logo-full.webp" class="logo-full--header" alt="FINAVIA">
+      </a>
+
+      <!-- Navigation Desktop -->
+      <nav class="header-nav" aria-label="Navigation principale">
+        <ul class="nav-list" role="list">
+          <li><a href="index.html"              class="nav-link" data-i18n="nav.home">Accueil</a></li>
+          <li><a href="nos-prets.html"          class="nav-link" data-i18n="nav.loans">Nos Prêts</a></li>
+          <li><a href="comment-ca-marche.html"  class="nav-link" data-i18n="nav.howItWorks">Comment ça marche</a></li>
+          <li><a href="a-propos.html"           class="nav-link" data-i18n="nav.about">À Propos</a></li>
+          <li><a href="contact.html"            class="nav-link" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Actions : langue + CTA + hamburger -->
+      <div class="header-actions">
+        <!-- Sélecteur de langue -->
+        <div class="lang-switcher" id="langSwitcher" role="navigation" aria-label="Sélection de langue">
+          <button class="lang-current" id="langCurrent" aria-haspopup="true" aria-expanded="false">
+            <span class="lang-flag" id="currentFlag" aria-hidden="true">🇫🇷</span>
+            <span class="lang-code" id="currentCode">FR</span>
+            <svg class="lang-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="lang-dropdown" id="langDropdown" role="menu">
+            <button class="lang-option" data-lang="fr" role="menuitem">🇫🇷 Français</button>
+            <button class="lang-option" data-lang="es" role="menuitem">🇪🇸 Español</button>
+            <button class="lang-option" data-lang="de" role="menuitem">🇩🇪 Deutsch</button>
+            <button class="lang-option" data-lang="pt" role="menuitem">🇵🇹 Português</button>
+            <button class="lang-option" data-lang="it" role="menuitem">🇮🇹 Italiano</button>
+          </div>
+        </div>
+
+        <!-- CTA Desktop -->
+        <a href="demande-de-pret.html" class="btn btn-primary btn-sm" data-i18n="nav.apply">Demande de Prêt</a>
+
+        <!-- Hamburger Mobile -->
+        <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="hamburger-line" aria-hidden="true"></span>
+          <span class="hamburger-line" aria-hidden="true"></span>
+          <span class="hamburger-line" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu Mobile -->
+    </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true" role="dialog" aria-label="Menu principal">
+      <div class="mobile-menu-inner">
+        <div class="mobile-menu-header">
+          <a href="index.html" class="header-logo">
+            <img src="assets/images/logo-full.webp" class="logo-full--sm" alt="FINAVIA">
+          </a>
+          <button class="mobile-menu-close" id="mobileClose" aria-label="Fermer le menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+
+        <nav aria-label="Navigation mobile">
+          <ul class="mobile-nav-list" role="list">
+            <li><a href="index.html"              class="mobile-nav-link" data-i18n="nav.home">Accueil</a></li>
+            <li><a href="nos-prets.html"          class="mobile-nav-link" data-i18n="nav.loans">Nos Prêts</a></li>
+            <li><a href="comment-ca-marche.html"  class="mobile-nav-link" data-i18n="nav.howItWorks">Comment ça marche</a></li>
+            <li><a href="a-propos.html"           class="mobile-nav-link" data-i18n="nav.about">À Propos</a></li>
+            <li><a href="contact.html"            class="mobile-nav-link" data-i18n="nav.contact">Contact</a></li>
+            <li><a href="demande-de-pret.html"    class="mobile-nav-link mobile-cta" data-i18n="nav.apply">Demande de Prêt</a></li>
+          </ul>
+        </nav>
+
+        <div class="mobile-lang-section">
+          <p class="mobile-lang-title">Langue</p>
+          <div class="mobile-lang-grid">
+            <button class="mobile-lang-btn active" data-lang="fr">🇫🇷 FR</button>
+            <button class="mobile-lang-btn" data-lang="es">🇪🇸 ES</button>
+            <button class="mobile-lang-btn" data-lang="de">🇩🇪 DE</button>
+            <button class="mobile-lang-btn" data-lang="pt">🇵🇹 PT</button>
+            <button class="mobile-lang-btn" data-lang="it">🇮🇹 IT</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <!-- =============================================
+       CONTENU PRINCIPAL
+       ============================================= -->
+  <main id="main-content">
+
+    <!-- =============================================
+         HERO SECTION — 2 carrousels d'images
+         ---------------------------------------------
+         1) Carrousel de fond AUTOMATIQUE (3 photos, défilement
+            seul + légende qui change, points de navigation manuelle).
+         2) Mini-carrousel MANUEL "Nos solutions en images" (5 cartes,
+            navigation uniquement par flèches/points/glissement tactile).
+         Tous les emplacements photo sont gérés depuis Cloudinary —
+         voir CLOUDINARY-IMAGES.md pour la liste complète des identifiants.
+         ============================================= -->
+    <section class="hero" aria-label="Bannière principale">
+
+      <!-- Vidéo cinématique : démarre en carte au centre, s'étend en plein écran -->
+      <div class="hero-video-wrap" id="heroVideoWrap" aria-hidden="true">
+        <video class="hero-video" id="heroVideo"
+               autoplay muted loop playsinline
+               preload="auto"
+               poster="assets/images/hero-bg-handshake.webp">
+          <source src="https://res.cloudinary.com/duramdsjz/video/upload/q_auto/finavia/hero/video-main.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- Voile semi-transparent (apparaît après l'expansion complète de la vidéo) -->
+      <div class="hero-video-overlay" id="heroVideoOverlay" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <!-- Contenu texte gauche -->
+        <div class="hero-content">
+          <div class="hero-badge" role="text" data-i18n="hero.badge">
+            Votre partenaire financier de confiance en Europe
+          </div>
+
+          <h1 class="hero-title">
+            <span class="hero-title-line" data-i18n="hero.title">Financer vos projets,</span>
+            <span class="hero-title-highlight" data-i18n="hero.titleBold">simplement et sûrement</span>
+          </h1>
+
+          <p class="hero-subtitle" data-i18n="hero.subtitle">
+            FINAVIA vous accompagne dans tous vos projets avec des solutions de financement adaptées à votre situation et vos besoins.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="demande-de-pret.html" class="btn btn-primary btn-lg" data-i18n="hero.cta1">
+              Faire une demande
+            </a>
+            <a href="#services" class="btn btn-outline-white btn-lg" data-i18n="hero.cta2">
+              En savoir plus
+            </a>
+          </div>
+
+          <!-- Badges de confiance -->
+          <div class="hero-trust" role="list" aria-label="Garanties">
+            <div class="hero-trust-item" role="listitem">
+              <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <span data-i18n="hero.trust1">Réponse en 24h</span>
+            </div>
+            <div class="hero-trust-item" role="listitem">
+              <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              <span data-i18n="hero.trust2">100% Sécurisé</span>
+            </div>
+            <div class="hero-trust-item" role="listitem">
+              <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span data-i18n="hero.trust3">Sans engagement</span>
+            </div>
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+      <!-- Indicateur de scroll -->
+      <div class="hero-scroll" role="button" aria-label="Défiler vers le bas" tabindex="0">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <polyline points="7 13 12 18 17 13"/><polyline points="7 6 12 11 17 6"/>
+        </svg>
+        <span data-i18n="hero.scroll">DÉCOUVRIR</span>
+      </div>
+    </section>
+
+    <!-- =============================================
+         STATISTIQUES CLÉS
+         ============================================= -->
+    <section class="stats-section" aria-label="Chiffres clés">
+      <div class="container">
+        <div class="stats-grid" role="list">
+          <div class="stat-item" role="listitem">
+            <span class="stat-value"
+                  data-counter="50000"
+                  data-suffix="+"
+                  data-i18n="stats.1.value">50 000</span><span class="stat-suffix" data-i18n="stats.1.suffix" aria-hidden="true">+</span>
+            <p class="stat-label" data-i18n="stats.1.label">Clients satisfaits</p>
+          </div>
+          <div class="stat-item" role="listitem">
+            <span class="stat-value"
+                  data-counter="500"
+                  data-suffix="M€+"
+                  data-i18n="stats.2.value">500</span><span class="stat-suffix" data-i18n="stats.2.suffix" aria-hidden="true">M€+</span>
+            <p class="stat-label" data-i18n="stats.2.label">Financés en Europe</p>
+          </div>
+          <div class="stat-item" role="listitem">
+            <span class="stat-value"
+                  data-counter="15"
+                  data-suffix="+"
+                  data-i18n="stats.3.value">15</span><span class="stat-suffix" data-i18n="stats.3.suffix" aria-hidden="true">+</span>
+            <p class="stat-label" data-i18n="stats.3.label">Années d'expertise</p>
+          </div>
+          <div class="stat-item" role="listitem">
+            <span class="stat-value"
+                  data-counter="94"
+                  data-suffix="%"
+                  data-i18n="stats.4.value">94</span><span class="stat-suffix" data-i18n="stats.4.suffix" aria-hidden="true">%</span>
+            <p class="stat-label" data-i18n="stats.4.label">Taux d'approbation</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         AVANTAGES
+         ============================================= -->
+    <section class="section" aria-labelledby="advantages-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge" data-i18n="advantages.badge">Pourquoi FINAVIA ?</span>
+          <h2 class="section-title" id="advantages-title" data-i18n="advantages.title">Des avantages qui font la différence</h2>
+          <p class="section-subtitle" data-i18n="advantages.subtitle">Nous mettons tout en œuvre pour vous offrir la meilleure expérience de financement.</p>
+        </div>
+        <div class="advantages-grid" role="list">
+          <!-- Avantage 1 -->
+          <div class="advantage-card reveal" role="listitem">
+            <div class="advantage-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <h3 class="advantage-title" data-i18n="adv.1.title">Réponse en 24 heures</h3>
+            <p class="advantage-desc" data-i18n="adv.1.desc">Obtenez une décision rapide sur votre demande.</p>
+          </div>
+          <!-- Avantage 2 -->
+          <div class="advantage-card reveal" role="listitem">
+            <div class="advantage-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <h3 class="advantage-title" data-i18n="adv.2.title">Taux compétitifs</h3>
+            <p class="advantage-desc" data-i18n="adv.2.desc">Bénéficiez de taux parmi les plus avantageux du marché européen.</p>
+          </div>
+          <!-- Avantage 3 -->
+          <div class="advantage-card reveal" role="listitem">
+            <div class="advantage-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3 class="advantage-title" data-i18n="adv.3.title">100% Sécurisé</h3>
+            <p class="advantage-desc" data-i18n="adv.3.desc">Vos données protégées par les plus hauts standards de sécurité.</p>
+          </div>
+          <!-- Avantage 4 -->
+          <div class="advantage-card reveal" role="listitem">
+            <div class="advantage-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <h3 class="advantage-title" data-i18n="adv.4.title">Conseillers experts</h3>
+            <p class="advantage-desc" data-i18n="adv.4.desc">Une équipe de spécialistes vous accompagne tout au long.</p>
+          </div>
+          <!-- Avantage 5 -->
+          <div class="advantage-card reveal" role="listitem">
+            <div class="advantage-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <h3 class="advantage-title" data-i18n="adv.5.title">Sans engagement</h3>
+            <p class="advantage-desc" data-i18n="adv.5.desc">Simulation gratuite. Libre d'accepter ou de refuser.</p>
+          </div>
+          <!-- Avantage 6 -->
+          <div class="advantage-card reveal" role="listitem">
+            <div class="advantage-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <h3 class="advantage-title" data-i18n="adv.6.title">9 pays couverts</h3>
+            <p class="advantage-desc" data-i18n="adv.6.desc">Présents dans 9 pays européens pour vous accompagner partout.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         NOS SERVICES
+         ============================================= -->
+    <section class="section section--alt" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge" data-i18n="services.badge">Nos solutions</span>
+          <h2 class="section-title" id="services-title" data-i18n="services.title">Des prêts adaptés à chaque projet</h2>
+          <p class="section-subtitle" data-i18n="services.subtitle">FINAVIA propose une gamme complète de solutions financières pour accompagner tous vos projets de vie.</p>
+        </div>
+
+        <div class="services-grid" role="list">
+          <!-- Prêt Personnel -->
+          <article class="service-card" role="listitem">
+            <div class="service-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <span class="service-card-tag" data-i18n="service.personal.tag">Jusqu'à 75 000 €</span>
+            <h3 class="service-card-title" data-i18n="service.personal.title">Prêt Personnel</h3>
+            <p class="service-card-desc" data-i18n="service.personal.desc">Financez vos projets personnels avec des conditions avantageuses et flexibles.</p>
+            <a href="nos-prets.html#personnel" class="service-card-link" data-i18n="service.personal.cta">
+              En savoir plus
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </article>
+
+          <!-- Prêt Auto -->
+          <article class="service-card" role="listitem">
+            <div class="service-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                <circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+              </svg>
+            </div>
+            <span class="service-card-tag" data-i18n="service.auto.tag">Jusqu'à 80 000 €</span>
+            <h3 class="service-card-title" data-i18n="service.auto.title">Prêt Automobile</h3>
+            <p class="service-card-desc" data-i18n="service.auto.desc">Obtenez votre véhicule rapidement avec notre financement automobile sur mesure.</p>
+            <a href="nos-prets.html#auto" class="service-card-link" data-i18n="service.auto.cta">
+              En savoir plus
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </article>
+
+          <!-- Prêt Travaux -->
+          <article class="service-card" role="listitem">
+            <div class="service-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </div>
+            <span class="service-card-tag" data-i18n="service.travaux.tag">Jusqu'à 75 000 €</span>
+            <h3 class="service-card-title" data-i18n="service.travaux.title">Prêt Travaux</h3>
+            <p class="service-card-desc" data-i18n="service.travaux.desc">Transformez votre habitat avec notre financement dédié aux travaux.</p>
+            <a href="nos-prets.html#travaux" class="service-card-link" data-i18n="service.travaux.cta">
+              En savoir plus
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </article>
+
+          <!-- Prêt Immobilier -->
+          <article class="service-card" role="listitem">
+            <div class="service-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/><path d="M19 9V5h-4"/>
+              </svg>
+            </div>
+            <span class="service-card-tag" data-i18n="service.immo.tag">Jusqu'à 1 000 000 €</span>
+            <h3 class="service-card-title" data-i18n="service.immo.title">Prêt Immobilier</h3>
+            <p class="service-card-desc" data-i18n="service.immo.desc">Réalisez votre projet immobilier avec notre accompagnement expert.</p>
+            <a href="nos-prets.html#immo" class="service-card-link" data-i18n="service.immo.cta">
+              En savoir plus
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </article>
+
+          <!-- Regroupement -->
+          <article class="service-card" role="listitem">
+            <div class="service-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+                <polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+              </svg>
+            </div>
+            <span class="service-card-tag" data-i18n="service.regroupement.tag">Jusqu'à 150 000 €</span>
+            <h3 class="service-card-title" data-i18n="service.regroupement.title">Regroupement de Crédits</h3>
+            <p class="service-card-desc" data-i18n="service.regroupement.desc">Simplifiez vos remboursements en regroupant tous vos crédits.</p>
+            <a href="nos-prets.html#regroupement" class="service-card-link" data-i18n="service.regroupement.cta">
+              En savoir plus
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </article>
+
+          <!-- Autres Solutions -->
+          <article class="service-card" role="listitem">
+            <div class="service-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+            </div>
+            <span class="service-card-tag" data-i18n="service.other.tag">Solutions sur mesure</span>
+            <h3 class="service-card-title" data-i18n="service.other.title">Autres Solutions</h3>
+            <p class="service-card-desc" data-i18n="service.other.desc">Découvrez nos autres solutions financières adaptées à vos besoins.</p>
+            <a href="contact.html" class="service-card-link" data-i18n="service.other.cta">
+              Nous contacter
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SHOWCASE 1 : ACCOMPAGNEMENT PERSONNALISÉ
+         Photo réelle illustrant le suivi par un conseiller dédié
+         ============================================= -->
+    <section class="section section--alt" aria-labelledby="showcase1-title">
+      <div class="container">
+        <div class="loan-layout reveal">
+          <div class="loan-content">
+            <span class="loan-badge" data-i18n="home.showcase1.badge">Accompagnement personnalisé</span>
+            <h2 class="loan-title" id="showcase1-title" data-i18n="home.showcase1.title">Des conseillers à votre écoute</h2>
+            <p class="loan-desc" data-i18n="home.showcase1.desc">
+              Chez FINAVIA, chaque dossier est suivi par un conseiller dédié. De la première demande à la signature, nous vous accompagnons avec attention pour trouver la solution la plus adaptée à votre situation.
+            </p>
+            <a href="contact.html" class="btn btn-primary" data-i18n="home.showcase1.cta">Parler à un conseiller</a>
+          </div>
+          <div class="loan-visual">
+            <img src="assets/images/advisor-signing.webp"
+                 data-cld="finavia/showcase-advisor"
+                 class="showcase-img"
+                 data-i18n-alt="home.showcase1.imgalt"
+                 alt="Conseillère FINAVIA signant un document de prêt avec un client"
+                 loading="lazy"
+                 width="1000" height="700">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         COMMENT ÇA MARCHE (APERÇU)
+         ============================================= -->
+    <section class="section" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge" data-i18n="how.badge">Notre processus</span>
+          <h2 class="section-title" id="how-title" data-i18n="how.title">Simple, rapide et transparent</h2>
+          <p class="section-subtitle" data-i18n="how.subtitle">Nous avons conçu un processus clair et efficace pour vous offrir la meilleure expérience possible.</p>
+        </div>
+
+        <div class="steps-grid" role="list">
+          <div class="step-card" role="listitem">
+            <div class="step-number" aria-hidden="true">1</div>
+            <h3 class="step-title" data-i18n="how.step1.title">Faites votre demande</h3>
+            <p class="step-desc" data-i18n="how.step1.desc">Remplissez notre formulaire en ligne en 5 minutes.</p>
+          </div>
+          <div class="step-card" role="listitem">
+            <div class="step-number" aria-hidden="true">2</div>
+            <h3 class="step-title" data-i18n="how.step2.title">Analyse de dossier</h3>
+            <p class="step-desc" data-i18n="how.step2.desc">Notre équipe analyse votre dossier sous 24 heures.</p>
+          </div>
+          <div class="step-card" role="listitem">
+            <div class="step-number" aria-hidden="true">3</div>
+            <h3 class="step-title" data-i18n="how.step3.title">Proposition personnalisée</h3>
+            <p class="step-desc" data-i18n="how.step3.desc">Recevez une offre adaptée à votre situation.</p>
+          </div>
+          <div class="step-card" role="listitem">
+            <div class="step-number" aria-hidden="true">4</div>
+            <h3 class="step-title" data-i18n="how.step4.title">Déblocage des fonds</h3>
+            <p class="step-desc" data-i18n="how.step4.desc">Les fonds sont virés rapidement sur votre compte.</p>
+          </div>
+        </div>
+
+        <div style="text-align:center; margin-top:3rem;">
+          <a href="comment-ca-marche.html" class="btn btn-secondary btn-lg" data-i18n="how.cta">
+            Voir le processus complet
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SHOWCASE 2 : RÉALISEZ VOS PROJETS DE VIE
+         Photo réelle illustrant un client ayant obtenu son financement
+         ============================================= -->
+    <section class="section" aria-labelledby="showcase2-title">
+      <div class="container">
+        <div class="loan-layout reverse reveal">
+          <div class="loan-content">
+            <span class="loan-badge" data-i18n="home.showcase2.badge">Ils nous ont fait confiance</span>
+            <h2 class="loan-title" id="showcase2-title" data-i18n="home.showcase2.title">Réalisez vos projets de vie</h2>
+            <p class="loan-desc" data-i18n="home.showcase2.desc">
+              Achat immobilier, véhicule, travaux ou nouveau départ : nos clients réalisent leurs projets grâce à un financement simple et rapide. Vous pourriez être les prochains.
+            </p>
+            <a href="demande-de-pret.html" class="btn btn-primary" data-i18n="home.showcase2.cta">Faire une demande</a>
+          </div>
+          <div class="loan-visual">
+            <img src="assets/images/happy-homeowners.webp"
+                 data-cld="finavia/showcase-homeowners"
+                 class="showcase-img"
+                 data-i18n-alt="home.showcase2.imgalt"
+                 alt="Couple souriant tenant les clés de leur nouvelle maison"
+                 loading="lazy"
+                 width="1000" height="700">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         TÉMOIGNAGES
+         ============================================= -->
+    <section class="section section--alt" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge" data-i18n="testimonials.badge">Témoignages</span>
+          <h2 class="section-title" id="testimonials-title" data-i18n="testimonials.title">Ce que disent nos clients</h2>
+          <p class="section-subtitle" data-i18n="testimonials.subtitle">Des milliers de clients nous font confiance pour leurs projets financiers.</p>
+        </div>
+
+        <div class="testimonials-grid" role="list">
+          <!-- Témoignage 1 -->
+          <article class="testimonial-card" role="listitem">
+            <div class="testimonial-stars" aria-label="5 étoiles sur 5">★★★★★</div>
+            <blockquote class="testimonial-text" data-i18n="testimonial.1.text">
+              "J'avais besoin d'un financement rapide pour rénover ma maison. FINAVIA m'a proposé une offre en 24h. Je recommande vraiment !"
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">MD</div>
+              <div>
+                <div class="testimonial-name" data-i18n="testimonial.1.name">Marie Dupont</div>
+                <div class="testimonial-info" data-i18n="testimonial.1.info">Paris, France • Prêt Travaux 35 000 €</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Témoignage 2 -->
+          <article class="testimonial-card" role="listitem">
+            <div class="testimonial-stars" aria-label="5 étoiles sur 5">★★★★★</div>
+            <blockquote class="testimonial-text" data-i18n="testimonial.2.text">
+              "Service exceptionnel ! Mon conseiller m'a accompagné tout au long du processus. J'ai obtenu mon prêt auto en quelques jours."
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">CG</div>
+              <div>
+                <div class="testimonial-name" data-i18n="testimonial.2.name">Carlos García</div>
+                <div class="testimonial-info" data-i18n="testimonial.2.info">Madrid, Espagne • Prêt Auto 22 000 €</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Témoignage 3 -->
+          <article class="testimonial-card" role="listitem">
+            <div class="testimonial-stars" aria-label="5 étoiles sur 5">★★★★★</div>
+            <blockquote class="testimonial-text" data-i18n="testimonial.3.text">
+              "Regroupement de crédits réussi grâce à FINAVIA. Ma mensualité a baissé de 35% et je peux enfin respirer financièrement."
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">KM</div>
+              <div>
+                <div class="testimonial-name" data-i18n="testimonial.3.name">Klaus Müller</div>
+                <div class="testimonial-info" data-i18n="testimonial.3.info">Berlin, Allemagne • Regroupement 80 000 €</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SÉCURITÉ
+         ============================================= -->
+    <section class="section section--dark" aria-labelledby="security-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge" style="background:rgba(0,168,120,0.2);color:#6AE0B8;" data-i18n="security.badge">Sécurité & Confiance</span>
+          <h2 class="section-title" id="security-title" data-i18n="security.title">Votre sécurité, notre priorité absolue</h2>
+          <p class="section-subtitle" data-i18n="security.subtitle">FINAVIA met en œuvre les plus hauts standards de sécurité.</p>
+        </div>
+
+        <div class="security-grid" role="list">
+          <div class="security-item" role="listitem">
+            <span class="security-icon" aria-hidden="true">🔐</span>
+            <h3 class="security-title" data-i18n="security.1.title">Chiffrement SSL</h3>
+            <p class="security-desc" data-i18n="security.1.desc">Données chiffrées avec un protocole SSL 256 bits.</p>
+          </div>
+          <div class="security-item" role="listitem">
+            <span class="security-icon" aria-hidden="true">🛡️</span>
+            <h3 class="security-title" data-i18n="security.2.title">RGPD Conforme</h3>
+            <p class="security-desc" data-i18n="security.2.desc">Conformité totale avec la réglementation européenne.</p>
+          </div>
+          <div class="security-item" role="listitem">
+            <span class="security-icon" aria-hidden="true">✅</span>
+            <h3 class="security-title" data-i18n="security.3.title">Régulé & Agréé</h3>
+            <p class="security-desc" data-i18n="security.3.desc">Agréé par les autorités financières européennes.</p>
+          </div>
+          <div class="security-item" role="listitem">
+            <span class="security-icon" aria-hidden="true">🚫</span>
+            <h3 class="security-title" data-i18n="security.4.title">Zéro Arnaque</h3>
+            <p class="security-desc" data-i18n="security.4.desc">Aucun frais avant l'octroi du prêt. 100% transparent.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         GALERIE FINAVIA
+         ---------------------------------------------
+         6 emplacements photo gérés depuis Cloudinary.
+         Identifiants : finavia/gallery/1 à finavia/gallery/6
+         (voir CLOUDINARY-IMAGES.md à la racine du projet).
+         Tant qu'une image n'est pas uploadée, son emplacement
+         affiche "Image à venir" — dès l'upload, elle apparaît
+         automatiquement, optimisée et responsive.
+         ============================================= -->
+    <section class="section section--alt" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge" data-i18n="home.gallery.badge">FINAVIA en images</span>
+          <h2 class="section-title" id="gallery-title" data-i18n="home.gallery.title">Notre quotidien, vos réussites</h2>
+          <p class="section-subtitle" data-i18n="home.gallery.subtitle">Un aperçu de nos équipes, de nos bureaux et des projets de nos clients à travers l'Europe.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="cld-photo gallery-item gallery-item--large" data-cld="finavia/gallery/1" data-cld-w="800" style="--cld-ratio:4/3;" role="img" data-i18n-aria="home.gallery.img1.alt" aria-label="Bureaux FINAVIA">
+            <div class="cld-photo-placeholder">
+              <span class="cld-photo-placeholder-icon">🏢</span>
+              <span class="cld-photo-placeholder-text" data-i18n="home.gallery.placeholder">Image à venir</span>
+            </div>
+          </div>
+          <div class="cld-photo gallery-item" data-cld="finavia/gallery/2" data-cld-w="500" style="--cld-ratio:1/1;" role="img" data-i18n-aria="home.gallery.img2.alt" aria-label="Équipe FINAVIA">
+            <div class="cld-photo-placeholder">
+              <span class="cld-photo-placeholder-icon">👥</span>
+              <span class="cld-photo-placeholder-text" data-i18n="home.gallery.placeholder">Image à venir</span>
+            </div>
+          </div>
+          <div class="cld-photo gallery-item" data-cld="finavia/gallery/3" data-cld-w="500" style="--cld-ratio:1/1;" role="img" data-i18n-aria="home.gallery.img3.alt" aria-label="Client FINAVIA">
+            <div class="cld-photo-placeholder">
+              <span class="cld-photo-placeholder-icon">🤝</span>
+              <span class="cld-photo-placeholder-text" data-i18n="home.gallery.placeholder">Image à venir</span>
+            </div>
+          </div>
+          <div class="cld-photo gallery-item" data-cld="finavia/gallery/4" data-cld-w="500" style="--cld-ratio:1/1;" role="img" data-i18n-aria="home.gallery.img4.alt" aria-label="Projet financé FINAVIA">
+            <div class="cld-photo-placeholder">
+              <span class="cld-photo-placeholder-icon">🏡</span>
+              <span class="cld-photo-placeholder-text" data-i18n="home.gallery.placeholder">Image à venir</span>
+            </div>
+          </div>
+          <div class="cld-photo gallery-item gallery-item--large" data-cld="finavia/gallery/5" data-cld-w="800" style="--cld-ratio:4/3;" role="img" data-i18n-aria="home.gallery.img5.alt" aria-label="Conseil client FINAVIA">
+            <div class="cld-photo-placeholder">
+              <span class="cld-photo-placeholder-icon">💬</span>
+              <span class="cld-photo-placeholder-text" data-i18n="home.gallery.placeholder">Image à venir</span>
+            </div>
+          </div>
+          <div class="cld-photo gallery-item" data-cld="finavia/gallery/6" data-cld-w="500" style="--cld-ratio:1/1;" role="img" data-i18n-aria="home.gallery.img6.alt" aria-label="Vie d'agence FINAVIA">
+            <div class="cld-photo-placeholder">
+              <span class="cld-photo-placeholder-icon">📋</span>
+              <span class="cld-photo-placeholder-text" data-i18n="home.gallery.placeholder">Image à venir</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         FAQ
+         ============================================= -->
+    <section class="section section--alt" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge" data-i18n="faq.badge">Questions fréquentes</span>
+          <h2 class="section-title" id="faq-title" data-i18n="faq.title">Vous avez des questions ?</h2>
+          <p class="section-subtitle" data-i18n="faq.subtitle">Retrouvez les réponses aux questions les plus fréquemment posées.</p>
+        </div>
+
+        <div class="faq-list" role="list">
+          <!-- FAQ 1 -->
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text" data-i18n="faq.q1">Quels documents faut-il fournir pour une demande de prêt ?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner" data-i18n="faq.a1">
+                Pour une demande de prêt, vous aurez besoin de votre pièce d'identité, de vos 3 derniers bulletins de salaire, de vos 3 derniers relevés bancaires et d'un justificatif de domicile récent.
+              </div>
+            </div>
+          </div>
+          <!-- FAQ 2 -->
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text" data-i18n="faq.q2">Quel est le délai de traitement d'une demande ?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner" data-i18n="faq.a2">Notre équipe s'engage à analyser votre dossier en moins de 24 heures ouvrées.</div>
+            </div>
+          </div>
+          <!-- FAQ 3 -->
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text" data-i18n="faq.q3">Quels sont les montants et durées disponibles ?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner" data-i18n="faq.a3">Nos prêts vont de 1 000 € à 1 000 000 €, avec des durées de 12 à 300 mois selon le type.</div>
+            </div>
+          </div>
+          <!-- FAQ 4 -->
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text" data-i18n="faq.q4">Ma demande est-elle sans engagement ?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner" data-i18n="faq.a4">Absolument. Faire une demande n'engendre aucune obligation. Vous êtes libre d'accepter ou de refuser.</div>
+            </div>
+          </div>
+          <!-- FAQ 5 -->
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text" data-i18n="faq.q5">Comment sont calculés les taux d'intérêt ?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner" data-i18n="faq.a5">Les taux sont calculés selon votre profil, le montant demandé et la durée. TAEG dès 2,9%.</div>
+            </div>
+          </div>
+          <!-- FAQ 6 -->
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text" data-i18n="faq.q6">Puis-je rembourser mon prêt par anticipation ?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner" data-i18n="faq.a6">Oui, le remboursement anticipé est possible à tout moment, conformément à la réglementation européenne.</div>
+            </div>
+          </div>
+          <!-- FAQ 7 -->
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text" data-i18n="faq.q7">FINAVIA est-il disponible dans mon pays ?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner" data-i18n="faq.a7">FINAVIA opère en France, Espagne, Allemagne, Portugal, Italie, Suisse, Belgique, Monaco et Luxembourg.</div>
+            </div>
+          </div>
+          <!-- FAQ 8 -->
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text" data-i18n="faq.q8">Que se passe-t-il si ma demande est refusée ?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner" data-i18n="faq.a8">En cas de refus, vous êtes informé par email. Nos conseillers peuvent vous proposer des alternatives adaptées.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         PAYS COUVERTS
+         ============================================= -->
+    <section class="section" aria-labelledby="countries-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge" data-i18n="countries.badge">Zone de couverture</span>
+          <h2 class="section-title" id="countries-title" data-i18n="countries.title">Présents dans 9 pays européens</h2>
+          <p class="section-subtitle" data-i18n="countries.subtitle">FINAVIA accompagne vos projets partout en Europe avec une expertise locale.</p>
+        </div>
+        <div class="countries-grid" role="list">
+          <span class="country-badge" role="listitem"><span class="country-flag">🇫🇷</span> France</span>
+          <span class="country-badge" role="listitem"><span class="country-flag">🇪🇸</span> Espagne</span>
+          <span class="country-badge" role="listitem"><span class="country-flag">🇩🇪</span> Allemagne</span>
+          <span class="country-badge" role="listitem"><span class="country-flag">🇵🇹</span> Portugal</span>
+          <span class="country-badge" role="listitem"><span class="country-flag">🇮🇹</span> Italie</span>
+          <span class="country-badge" role="listitem"><span class="country-flag">🇨🇭</span> Suisse</span>
+          <span class="country-badge" role="listitem"><span class="country-flag">🇧🇪</span> Belgique</span>
+          <span class="country-badge" role="listitem"><span class="country-flag">🇲🇨</span> Monaco</span>
+          <span class="country-badge" role="listitem"><span class="country-flag">🇱🇺</span> Luxembourg</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         APPEL À L'ACTION FINAL
+         ============================================= -->
+    <section class="cta-section" aria-labelledby="cta-title">
+      <div class="container cta-inner">
+        <h2 class="section-title" id="cta-title" data-i18n="cta.title">Prêt à financer votre projet ?</h2>
+        <p class="section-subtitle" data-i18n="cta.subtitle">Rejoignez plus de 50 000 clients satisfaits et obtenez votre financement rapidement.</p>
+        <div class="cta-buttons">
+          <a href="demande-de-pret.html" class="btn btn-primary btn-lg" data-i18n="cta.button">Faire une demande</a>
+          <a href="contact.html"         class="btn btn-outline-white btn-lg" data-i18n="cta.button2">Nous contacter</a>
+        </div>
+        <p class="cta-note" data-i18n="cta.note">Sans engagement • Réponse en 24h • 100% Sécurisé</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =============================================
+       FOOTER
+       ============================================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Colonne 1 : Marque -->
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo" aria-label="FINAVIA Accueil">
+            <img src="assets/images/logo-full.webp" class="logo-full--sm" alt="FINAVIA">
+          </a>
+          <p class="footer-tagline" data-i18n="footer.tagline">Votre partenaire financier de confiance</p>
+          <div class="footer-social" aria-label="Réseaux sociaux">
+            <a href="#" class="social-link" aria-label="LinkedIn FINAVIA">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter / X FINAVIA">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Facebook FINAVIA">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Colonne 2 : Liens rapides -->
+        <div class="footer-col">
+          <h3 class="footer-heading" data-i18n="footer.links">Liens rapides</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="index.html"             data-i18n="nav.home">Accueil</a></li>
+            <li><a href="nos-prets.html"         data-i18n="nav.loans">Nos Prêts</a></li>
+            <li><a href="comment-ca-marche.html" data-i18n="nav.howItWorks">Comment ça marche</a></li>
+            <li><a href="a-propos.html"          data-i18n="nav.about">À Propos</a></li>
+            <li><a href="contact.html"           data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Colonne 3 : Services -->
+        <div class="footer-col">
+          <h3 class="footer-heading" data-i18n="footer.services">Nos services</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="nos-prets.html#personnel"    data-i18n="service.personal.title">Prêt Personnel</a></li>
+            <li><a href="nos-prets.html#auto"         data-i18n="service.auto.title">Prêt Automobile</a></li>
+            <li><a href="nos-prets.html#travaux"      data-i18n="service.travaux.title">Prêt Travaux</a></li>
+            <li><a href="nos-prets.html#immo"         data-i18n="service.immo.title">Prêt Immobilier</a></li>
+            <li><a href="nos-prets.html#regroupement" data-i18n="service.regroupement.title">Regroupement</a></li>
+          </ul>
+        </div>
+
+        <!-- Colonne 4 : Légal -->
+        <div class="footer-col">
+          <h3 class="footer-heading" data-i18n="footer.legal">Informations légales</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="#" data-i18n="footer.privacy">Politique de confidentialité</a></li>
+            <li><a href="#" data-i18n="footer.terms">Conditions générales</a></li>
+            <li><a href="#" data-i18n="footer.legal_notice">Mentions légales</a></li>
+            <li><a href="#" data-i18n="footer.cookies">Politique des cookies</a></li>
+          </ul>
+        </div>
+
+        <!-- Colonne 5 : Newsletter -->
+        <div class="footer-col">
+          <h3 class="footer-heading" data-i18n="footer.newsletter">Newsletter</h3>
+          <p class="footer-newsletter-desc" data-i18n="footer.newsletter.desc">Recevez nos offres et actualités financières.</p>
+          <div class="newsletter-form" role="form" aria-label="Inscription newsletter">
+            <label for="newsletterEmail" class="sr-only">Adresse email</label>
+            <input type="email" class="newsletter-input" id="newsletterEmail"
+                   data-i18n-placeholder="footer.newsletter.placeholder"
+                   placeholder="Votre adresse email"
+                   autocomplete="email">
+            <button class="newsletter-btn" id="newsletterBtn" data-i18n="footer.newsletter.btn" aria-label="S'abonner à la newsletter">
+              S'abonner
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bas de footer -->
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          © <span id="currentYear">2024</span> FINAVIA.
+          <span data-i18n="footer.rights">Tous droits réservés</span>.
+        </p>
+        <div class="footer-bottom-links">
+          <a href="#" data-i18n="footer.privacy">Confidentialité</a>
+          <a href="#" data-i18n="footer.terms">CGU</a>
+          <a href="#" data-i18n="footer.legal_notice">Mentions légales</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =============================================
+       SCRIPTS
+       ============================================= -->
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/cloudinary.js"></script>
+  <script src="js/hero-carousel.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demande de Prêt – Réponse en 24h | FINAVIA</title>
+  <meta name="description" content="Faites votre demande de prêt FINAVIA en ligne en 5 minutes. Formulaire sécurisé, sans engagement, réponse sous 24 heures ouvrées.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <!-- =============================================
+       PRÉCHARGEUR DE PAGE
+       Logo + anneau qui tourne une seule fois, puis disparaît.
+       Animation 100% CSS, aucun impact sur les performances
+       (voir css/main.css section 30 et js/main.js initPageLoader()).
+       ============================================= -->
+  <div class="page-loader" id="pageLoader" role="presentation" aria-hidden="true">
+    <div class="page-loader-stage">
+      <div class="page-loader-ring"></div>
+      <img src="assets/images/logo-full.webp" class="page-loader-logo" alt="">
+    </div>
+  </div>
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="header-logo"><img src="assets/images/logo-full.webp" class="logo-full--header" alt="FINAVIA"></a>
+      <nav class="header-nav"><ul class="nav-list">
+        <li><a href="index.html" class="nav-link" data-i18n="nav.home">Accueil</a></li>
+        <li><a href="nos-prets.html" class="nav-link" data-i18n="nav.loans">Nos Prêts</a></li>
+        <li><a href="comment-ca-marche.html" class="nav-link" data-i18n="nav.howItWorks">Comment ça marche</a></li>
+        <li><a href="a-propos.html" class="nav-link" data-i18n="nav.about">À Propos</a></li>
+        <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+      </ul></nav>
+      <div class="header-actions">
+        <div class="lang-switcher" id="langSwitcher">
+          <button class="lang-current" id="langCurrent" aria-haspopup="true" aria-expanded="false">
+            <span class="lang-flag" id="currentFlag">🇫🇷</span><span class="lang-code" id="currentCode">FR</span>
+            <svg class="lang-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="lang-dropdown" id="langDropdown" role="menu">
+            <button class="lang-option" data-lang="fr">🇫🇷 Français</button>
+            <button class="lang-option" data-lang="es">🇪🇸 Español</button>
+            <button class="lang-option" data-lang="de">🇩🇪 Deutsch</button>
+            <button class="lang-option" data-lang="pt">🇵🇹 Português</button>
+            <button class="lang-option" data-lang="it">🇮🇹 Italiano</button>
+          </div>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+    </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu-inner">
+        <div class="mobile-menu-header">
+          <a href="index.html" class="header-logo"><img src="assets/images/logo-full.webp" class="logo-full--sm" alt="FINAVIA"></a>
+          <button class="mobile-menu-close" id="mobileClose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        </div>
+        <nav><ul class="mobile-nav-list">
+          <li><a href="index.html" class="mobile-nav-link" data-i18n="nav.home">Accueil</a></li>
+          <li><a href="nos-prets.html" class="mobile-nav-link" data-i18n="nav.loans">Nos Prêts</a></li>
+          <li><a href="comment-ca-marche.html" class="mobile-nav-link" data-i18n="nav.howItWorks">Comment ça marche</a></li>
+          <li><a href="a-propos.html" class="mobile-nav-link" data-i18n="nav.about">À Propos</a></li>
+          <li><a href="contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contact</a></li>
+        </ul></nav>
+        <div class="mobile-lang-section"><p class="mobile-lang-title">Langue</p>
+          <div class="mobile-lang-grid">
+            <button class="mobile-lang-btn active" data-lang="fr">🇫🇷 FR</button>
+            <button class="mobile-lang-btn" data-lang="es">🇪🇸 ES</button>
+            <button class="mobile-lang-btn" data-lang="de">🇩🇪 DE</button>
+            <button class="mobile-lang-btn" data-lang="pt">🇵🇹 PT</button>
+            <button class="mobile-lang-btn" data-lang="it">🇮🇹 IT</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <main id="main-content">
+    <div class="loan-form-page">
+      <div class="loan-form-wrapper">
+
+        <!-- En-tête formulaire -->
+        <div class="loan-form-header">
+          <h1 class="loan-form-title" data-i18n="form.hero.title">Faites votre demande de prêt</h1>
+          <p class="loan-form-subtitle" data-i18n="form.hero.subtitle">Complétez ce formulaire en quelques minutes. Votre demande sera traitée sous 24 heures.</p>
+          <p id="stepCounter" style="margin-top:0.75rem;font-size:0.875rem;color:var(--clr-text-light);font-weight:600;">Étape 1 sur 4</p>
+        </div>
+
+        <!-- Barre de progression -->
+        <div class="form-progress">
+          <div class="form-progress-steps">
+            <div class="progress-step-item active" data-step="1">
+              <div class="progress-step-num">1</div>
+              <span class="progress-step-label" data-i18n="form.progress.step1">Identité</span>
+            </div>
+            <div class="progress-step-item" data-step="2">
+              <div class="progress-step-num">2</div>
+              <span class="progress-step-label" data-i18n="form.progress.step2">Finances</span>
+            </div>
+            <div class="progress-step-item" data-step="3">
+              <div class="progress-step-num">3</div>
+              <span class="progress-step-label" data-i18n="form.progress.step3">Projet</span>
+            </div>
+            <div class="progress-step-item" data-step="4">
+              <div class="progress-step-num">4</div>
+              <span class="progress-step-label" data-i18n="form.progress.step4">Confirmation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte formulaire -->
+        <div class="form-step-card">
+          <form id="loanForm" novalidate>
+
+            <!-- ============================================
+                 ÉTAPE 1 : IDENTITÉ
+                 ============================================ -->
+            <div class="form-step active" id="step1">
+              <h2 class="form-step-title" data-i18n="form.step1.title">Vos informations personnelles</h2>
+              <p class="form-step-desc" data-i18n="form.step1.desc">Ces informations nous permettent d'identifier votre dossier.</p>
+
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label" for="fieldFirstname">
+                    <span data-i18n="form.field.firstname">Prénom</span><span class="required">*</span>
+                  </label>
+                  <input type="text" class="form-input" id="fieldFirstname" required
+                         data-i18n-placeholder="form.ph.firstname" placeholder="Jean" autocomplete="given-name">
+                  <span class="form-error" id="fieldFirstnameError"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="fieldLastname">
+                    <span data-i18n="form.field.lastname">Nom de famille</span><span class="required">*</span>
+                  </label>
+                  <input type="text" class="form-input" id="fieldLastname" required
+                         data-i18n-placeholder="form.ph.lastname" placeholder="Dupont" autocomplete="family-name">
+                  <span class="form-error" id="fieldLastnameError"></span>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label" for="fieldEmail">
+                    <span data-i18n="form.field.email">Adresse email</span><span class="required">*</span>
+                  </label>
+                  <input type="email" class="form-input" id="fieldEmail" required
+                         data-i18n-placeholder="form.ph.email" placeholder="jean.dupont@email.com" autocomplete="email">
+                  <span class="form-error" id="fieldEmailError"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="fieldPhone">
+                    <span data-i18n="form.field.phone">Téléphone</span><span class="required">*</span>
+                  </label>
+                  <input type="tel" class="form-input" id="fieldPhone" required
+                         data-i18n-placeholder="form.ph.phone" placeholder="+33 6 12 34 56 78" autocomplete="tel">
+                  <span class="form-error" id="fieldPhoneError"></span>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label" for="fieldCountry">
+                    <span data-i18n="form.field.country">Pays de résidence</span><span class="required">*</span>
+                  </label>
+                  <select class="form-select" id="fieldCountry" required>
+                    <option value="" disabled selected>—</option>
+                    <option value="FR" data-i18n-option="country.fr">France</option>
+                    <option value="ES" data-i18n-option="country.es">Espagne</option>
+                    <option value="DE" data-i18n-option="country.de">Allemagne</option>
+                    <option value="PT" data-i18n-option="country.pt">Portugal</option>
+                    <option value="IT" data-i18n-option="country.it">Italie</option>
+                    <option value="CH" data-i18n-option="country.ch">Suisse</option>
+                    <option value="BE" data-i18n-option="country.be">Belgique</option>
+                    <option value="MC" data-i18n-option="country.mc">Monaco</option>
+                    <option value="LU" data-i18n-option="country.lu">Luxembourg</option>
+                  </select>
+                  <span class="form-error" id="fieldCountryError"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="fieldCity">
+                    <span data-i18n="form.field.city">Ville</span><span class="required">*</span>
+                  </label>
+                  <input type="text" class="form-input" id="fieldCity" required
+                         data-i18n-placeholder="form.ph.city" placeholder="Paris" autocomplete="address-level2">
+                  <span class="form-error" id="fieldCityError"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="fieldBirthdate">
+                  <span data-i18n="form.field.birthdate">Date de naissance</span>
+                </label>
+                <input type="date" class="form-input" id="fieldBirthdate" autocomplete="bday">
+              </div>
+            </div>
+
+            <!-- ============================================
+                 ÉTAPE 2 : SITUATION FINANCIÈRE
+                 ============================================ -->
+            <div class="form-step" id="step2">
+              <h2 class="form-step-title" data-i18n="form.step2.title">Votre situation financière</h2>
+              <p class="form-step-desc" data-i18n="form.step2.desc">Ces données sont nécessaires pour analyser votre capacité de remboursement.</p>
+
+              <div class="form-group">
+                <label class="form-label" for="fieldProfession">
+                  <span data-i18n="form.field.profession">Profession</span><span class="required">*</span>
+                </label>
+                <select class="form-select" id="fieldProfession" required>
+                  <option value="" disabled selected>—</option>
+                  <option value="employee" data-i18n-option="profession.employee">Salarié(e)</option>
+                  <option value="civil"    data-i18n-option="profession.civil">Fonctionnaire</option>
+                  <option value="self"     data-i18n-option="profession.self">Indépendant(e) / Auto-entrepreneur</option>
+                  <option value="manager"  data-i18n-option="profession.manager">Dirigeant(e) d'entreprise</option>
+                  <option value="retired"  data-i18n-option="profession.retired">Retraité(e)</option>
+                  <option value="student"  data-i18n-option="profession.student">Étudiant(e)</option>
+                  <option value="other"    data-i18n-option="profession.other">Autre</option>
+                </select>
+                <span class="form-error" id="fieldProfessionError"></span>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label" for="fieldIncome">
+                    <span data-i18n="form.field.income">Revenus nets mensuels (€)</span><span class="required">*</span>
+                  </label>
+                  <input type="number" class="form-input" id="fieldIncome" required min="0" step="50"
+                         data-i18n-placeholder="form.ph.income" placeholder="Ex : 3 000">
+                  <span class="form-error" id="fieldIncomeError"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="fieldCharges">
+                    <span data-i18n="form.field.charges">Charges mensuelles (€)</span>
+                  </label>
+                  <input type="number" class="form-input" id="fieldCharges" min="0" step="50"
+                         data-i18n-placeholder="form.ph.charges" placeholder="Ex : 500">
+                  <span class="form-error" id="fieldChargesError"></span>
+                </div>
+              </div>
+
+              <div class="alert alert-info">
+                <span>ℹ️</span>
+                <span>Ces informations resteront strictement confidentielles et ne seront utilisées que pour l'analyse de votre dossier, conformément à notre politique RGPD.</span>
+              </div>
+            </div>
+
+            <!-- ============================================
+                 ÉTAPE 3 : PROJET DE FINANCEMENT
+                 ============================================ -->
+            <div class="form-step" id="step3">
+              <h2 class="form-step-title" data-i18n="form.step3.title">Votre projet de financement</h2>
+              <p class="form-step-desc" data-i18n="form.step3.desc">Décrivez le projet que vous souhaitez financer.</p>
+
+              <div class="form-group">
+                <label class="form-label" for="fieldLoanType">
+                  <span data-i18n="form.field.loanType">Type de prêt souhaité</span><span class="required">*</span>
+                </label>
+                <select class="form-select" id="fieldLoanType" required>
+                  <option value="" disabled selected>—</option>
+                  <option value="personal"      data-i18n-option="loantype.personal">Prêt Personnel</option>
+                  <option value="auto"          data-i18n-option="loantype.auto">Prêt Automobile</option>
+                  <option value="travaux"       data-i18n-option="loantype.travaux">Prêt Travaux</option>
+                  <option value="immo"          data-i18n-option="loantype.immo">Prêt Immobilier</option>
+                  <option value="regroupement"  data-i18n-option="loantype.regroupement">Regroupement de Crédits</option>
+                  <option value="other"         data-i18n-option="loantype.other">Autre</option>
+                </select>
+                <span class="form-error" id="fieldLoanTypeError"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="rangeAmount">
+                  <span data-i18n="form.field.amount">Montant souhaité (€)</span><span class="required">*</span>
+                </label>
+                <input type="range" class="form-range" id="rangeAmount" min="1000" max="200000" step="500" value="15000">
+                <div class="range-values"><span>1 000 €</span><span id="amountDisplay" style="font-weight:700;color:var(--clr-primary);">15 000 €</span><span>200 000 €</span></div>
+                <input type="hidden" id="fieldAmount" value="15000" required>
+                <span class="form-error" id="fieldAmountError"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="fieldDuration">
+                  <span data-i18n="form.field.duration">Durée souhaitée (mois)</span><span class="required">*</span>
+                </label>
+                <select class="form-select" id="fieldDuration" required>
+                  <option value="" disabled selected>—</option>
+                  <option value="12">12 mois</option>
+                  <option value="24">24 mois</option>
+                  <option value="36">36 mois</option>
+                  <option value="48">48 mois</option>
+                  <option value="60" selected>60 mois</option>
+                  <option value="72">72 mois</option>
+                  <option value="84">84 mois</option>
+                  <option value="120">120 mois</option>
+                </select>
+                <span class="form-error" id="fieldDurationError"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="fieldDescription">
+                  <span data-i18n="form.field.description">Description de votre projet</span>
+                </label>
+                <textarea class="form-textarea" id="fieldDescription" rows="4"
+                          data-i18n-placeholder="form.ph.description" placeholder="Décrivez votre projet en quelques mots..."></textarea>
+              </div>
+            </div>
+
+            <!-- ============================================
+                 ÉTAPE 4 : RÉCAPITULATIF
+                 ============================================ -->
+            <div class="form-step" id="step4">
+              <h2 class="form-step-title" data-i18n="form.step4.title">Récapitulatif et confirmation</h2>
+              <p class="form-step-desc" data-i18n="form.step4.desc">Vérifiez vos informations avant de soumettre votre demande.</p>
+
+              <!-- Récap identité -->
+              <div class="form-recap">
+                <h3 class="form-recap-title" data-i18n="form.recap.identity">📋 Identité</h3>
+                <div class="form-recap-grid">
+                  <div class="form-recap-item"><label>Prénom</label><span id="recapFirstname">—</span></div>
+                  <div class="form-recap-item"><label>Nom</label><span id="recapLastname">—</span></div>
+                  <div class="form-recap-item"><label>Email</label><span id="recapEmail">—</span></div>
+                  <div class="form-recap-item"><label>Téléphone</label><span id="recapPhone">—</span></div>
+                  <div class="form-recap-item"><label>Pays</label><span id="recapCountry">—</span></div>
+                  <div class="form-recap-item"><label>Ville</label><span id="recapCity">—</span></div>
+                </div>
+              </div>
+
+              <!-- Récap finances -->
+              <div class="form-recap">
+                <h3 class="form-recap-title" data-i18n="form.recap.financial">💰 Situation financière</h3>
+                <div class="form-recap-grid">
+                  <div class="form-recap-item"><label>Profession</label><span id="recapProfession">—</span></div>
+                  <div class="form-recap-item"><label>Revenus</label><span id="recapIncome">—</span></div>
+                  <div class="form-recap-item"><label>Charges</label><span id="recapCharges">—</span></div>
+                </div>
+              </div>
+
+              <!-- Récap projet -->
+              <div class="form-recap">
+                <h3 class="form-recap-title" data-i18n="form.recap.project">🎯 Projet</h3>
+                <div class="form-recap-grid">
+                  <div class="form-recap-item"><label>Type de prêt</label><span id="recapLoanType">—</span></div>
+                  <div class="form-recap-item"><label>Montant</label><span id="recapAmount">—</span></div>
+                  <div class="form-recap-item"><label>Durée</label><span id="recapDuration">—</span></div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-check">
+                  <input type="checkbox" id="fieldConsent" required>
+                  <span class="form-check-label" data-i18n="form.field.consent">
+                    J'accepte les conditions générales d'utilisation et la politique de confidentialité de FINAVIA.
+                  </span>
+                </label>
+                <span class="form-error" id="consentError"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-check">
+                  <input type="checkbox" id="fieldNewsletter">
+                  <span class="form-check-label" data-i18n="form.field.newsletter">
+                    Je souhaite recevoir les offres et actualités de FINAVIA.
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Navigation du formulaire -->
+            <div class="form-step-divider"></div>
+            <div class="form-nav">
+              <button type="button" class="btn btn-secondary" id="btnBack" style="display:none;" data-i18n="form.btn.back">
+                Retour
+              </button>
+              <div class="form-nav-info">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                <span data-i18n="form.trust.secure">Formulaire 100% sécurisé</span>
+              </div>
+              <button type="button" class="btn btn-primary" id="btnNext" data-i18n="form.btn.next">
+                Continuer
+              </button>
+              <button type="button" class="btn btn-primary" id="btnSubmit" style="display:none;" data-i18n="form.btn.submit">
+                Soumettre ma demande
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Badges de confiance -->
+        <div style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-top:1.5rem;">
+          <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.8125rem;color:var(--clr-text-muted);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00A878" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span data-i18n="form.trust.no_commitment">Sans engagement</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.8125rem;color:var(--clr-text-muted);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00A878" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span data-i18n="form.trust.fast">Réponse en 24h</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="container">
+    <div class="footer-bottom" style="border-top:none;padding-top:2rem;">
+      <p class="footer-copy">© <span id="currentYear">2024</span> FINAVIA. <span data-i18n="footer.rights">Tous droits réservés</span>.</p>
+      <div class="footer-bottom-links">
+        <a href="#" data-i18n="footer.privacy">Confidentialité</a>
+        <a href="#" data-i18n="footer.terms">CGU</a>
+      </div>
+    </div>
+  </div></footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/cloudinary.js"></script>
+</body>
+</html>

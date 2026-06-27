@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nos Prêts – Prêt Personnel, Auto, Immobilier | FINAVIA</title>
+  <meta name="description" content="Découvrez toutes les solutions de financement FINAVIA : prêt personnel, auto, travaux, immobilier et regroupement de crédits. Taux compétitifs, réponse en 24h.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.finavia.eu/nos-prets.html">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <!-- =============================================
+       PRÉCHARGEUR DE PAGE
+       Logo + anneau qui tourne une seule fois, puis disparaît.
+       Animation 100% CSS, aucun impact sur les performances
+       (voir css/main.css section 30 et js/main.js initPageLoader()).
+       ============================================= -->
+  <div class="page-loader" id="pageLoader" role="presentation" aria-hidden="true">
+    <div class="page-loader-stage">
+      <div class="page-loader-ring"></div>
+      <img src="assets/images/logo-full.webp" class="page-loader-logo" alt="">
+    </div>
+  </div>
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+  <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
+
+  <!-- HEADER (identique à toutes les pages) -->
+  <header class="site-header" id="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="header-logo" aria-label="FINAVIA - Accueil">
+        <img src="assets/images/logo-full.webp" class="logo-full--header" alt="FINAVIA">
+      </a>
+      <nav class="header-nav" aria-label="Navigation principale">
+        <ul class="nav-list">
+          <li><a href="index.html"             class="nav-link" data-i18n="nav.home">Accueil</a></li>
+          <li><a href="nos-prets.html"         class="nav-link" data-i18n="nav.loans">Nos Prêts</a></li>
+          <li><a href="comment-ca-marche.html" class="nav-link" data-i18n="nav.howItWorks">Comment ça marche</a></li>
+          <li><a href="a-propos.html"          class="nav-link" data-i18n="nav.about">À Propos</a></li>
+          <li><a href="contact.html"           class="nav-link" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-switcher" id="langSwitcher">
+          <button class="lang-current" id="langCurrent" aria-haspopup="true" aria-expanded="false">
+            <span class="lang-flag" id="currentFlag">🇫🇷</span>
+            <span class="lang-code" id="currentCode">FR</span>
+            <svg class="lang-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="lang-dropdown" id="langDropdown" role="menu">
+            <button class="lang-option" data-lang="fr" role="menuitem">🇫🇷 Français</button>
+            <button class="lang-option" data-lang="es" role="menuitem">🇪🇸 Español</button>
+            <button class="lang-option" data-lang="de" role="menuitem">🇩🇪 Deutsch</button>
+            <button class="lang-option" data-lang="pt" role="menuitem">🇵🇹 Português</button>
+            <button class="lang-option" data-lang="it" role="menuitem">🇮🇹 Italiano</button>
+          </div>
+        </div>
+        <a href="demande-de-pret.html" class="btn btn-primary btn-sm" data-i18n="nav.apply">Demande de Prêt</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+    </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu-inner">
+        <div class="mobile-menu-header">
+          <a href="index.html" class="header-logo"><img src="assets/images/logo-full.webp" class="logo-full--sm" alt="FINAVIA"></a>
+          <button class="mobile-menu-close" id="mobileClose" aria-label="Fermer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+        <nav>
+          <ul class="mobile-nav-list">
+            <li><a href="index.html"             class="mobile-nav-link" data-i18n="nav.home">Accueil</a></li>
+            <li><a href="nos-prets.html"         class="mobile-nav-link" data-i18n="nav.loans">Nos Prêts</a></li>
+            <li><a href="comment-ca-marche.html" class="mobile-nav-link" data-i18n="nav.howItWorks">Comment ça marche</a></li>
+            <li><a href="a-propos.html"          class="mobile-nav-link" data-i18n="nav.about">À Propos</a></li>
+            <li><a href="contact.html"           class="mobile-nav-link" data-i18n="nav.contact">Contact</a></li>
+            <li><a href="demande-de-pret.html"   class="mobile-nav-link mobile-cta" data-i18n="nav.apply">Demande de Prêt</a></li>
+          </ul>
+        </nav>
+        <div class="mobile-lang-section">
+          <p class="mobile-lang-title">Langue</p>
+          <div class="mobile-lang-grid">
+            <button class="mobile-lang-btn active" data-lang="fr">🇫🇷 FR</button>
+            <button class="mobile-lang-btn" data-lang="es">🇪🇸 ES</button>
+            <button class="mobile-lang-btn" data-lang="de">🇩🇪 DE</button>
+            <button class="mobile-lang-btn" data-lang="pt">🇵🇹 PT</button>
+            <button class="mobile-lang-btn" data-lang="it">🇮🇹 IT</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <main id="main-content">
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container page-hero-content">
+        <span class="page-hero-badge" data-i18n="loans.hero.badge">Nos solutions financières</span>
+        <h1 class="page-hero-title" data-i18n="loans.hero.title">Des prêts pour chaque projet</h1>
+        <p class="page-hero-subtitle" data-i18n="loans.hero.subtitle">Découvrez notre gamme complète de solutions de financement, conçues pour s'adapter à votre situation et vos ambitions.</p>
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="index.html" data-i18n="nav.home">Accueil</a>
+          <span class="breadcrumb-sep" aria-hidden="true">›</span>
+          <span class="breadcrumb-current" data-i18n="nav.loans">Nos Prêts</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- NAVIGATION RAPIDE PAR ANCRE -->
+    <nav aria-label="Navigation des prêts" style="background:#fff;border-bottom:1px solid var(--clr-border);position:sticky;top:var(--header-height);z-index:50;">
+      <div class="container" style="display:flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;">
+        <a href="#personnel"    style="padding:1rem 1.25rem;font-size:0.875rem;font-weight:600;color:var(--clr-text-muted);white-space:nowrap;border-bottom:2px solid transparent;transition:all 0.2s;text-decoration:none;" data-i18n="service.personal.title">Prêt Personnel</a>
+        <a href="#auto"         style="padding:1rem 1.25rem;font-size:0.875rem;font-weight:600;color:var(--clr-text-muted);white-space:nowrap;border-bottom:2px solid transparent;transition:all 0.2s;text-decoration:none;" data-i18n="service.auto.title">Prêt Auto</a>
+        <a href="#travaux"      style="padding:1rem 1.25rem;font-size:0.875rem;font-weight:600;color:var(--clr-text-muted);white-space:nowrap;border-bottom:2px solid transparent;transition:all 0.2s;text-decoration:none;" data-i18n="service.travaux.title">Prêt Travaux</a>
+        <a href="#immo"         style="padding:1rem 1.25rem;font-size:0.875rem;font-weight:600;color:var(--clr-text-muted);white-space:nowrap;border-bottom:2px solid transparent;transition:all 0.2s;text-decoration:none;" data-i18n="service.immo.title">Prêt Immobilier</a>
+        <a href="#regroupement" style="padding:1rem 1.25rem;font-size:0.875rem;font-weight:600;color:var(--clr-text-muted);white-space:nowrap;border-bottom:2px solid transparent;transition:all 0.2s;text-decoration:none;" data-i18n="service.regroupement.title">Regroupement</a>
+      </div>
+    </nav>
+
+    <!-- PRÊT PERSONNEL -->
+    <section class="loan-section" id="personnel">
+      <div class="container">
+        <div class="loan-layout reveal">
+          <div class="loan-content">
+            <span class="loan-badge" data-i18n="loan.personal.badge">PRÊT PERSONNEL</span>
+            <h2 class="loan-title" data-i18n="loan.personal.title">Financez vos projets personnels</h2>
+            <p class="loan-desc" data-i18n="loan.personal.desc">Le prêt personnel FINAVIA vous permet de financer tous vos projets personnels sans justificatif d'utilisation. Vacances, mariage, équipement, études ou imprévus : nous vous accompagnons.</p>
+            <ul class="loan-features">
+              <li class="loan-feature"><div class="loan-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><span class="loan-feature-text" data-i18n="loan.personal.f1">Montant de 1 000 € à 75 000 €</span></li>
+              <li class="loan-feature"><div class="loan-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><span class="loan-feature-text" data-i18n="loan.personal.f2">Durée de 12 à 84 mois</span></li>
+              <li class="loan-feature"><div class="loan-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><span class="loan-feature-text" data-i18n="loan.personal.f3">TAEG à partir de 3,5%</span></li>
+              <li class="loan-feature"><div class="loan-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><span class="loan-feature-text" data-i18n="loan.personal.f4">Sans justificatif d'utilisation</span></li>
+              <li class="loan-feature"><div class="loan-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><span class="loan-feature-text" data-i18n="loan.personal.f5">Réponse en 24 heures</span></li>
+            </ul>
+            <div class="loan-conditions">
+              <div class="loan-conditions-grid">
+                <div class="loan-condition-item"><p class="loan-condition-label" data-i18n="loan.cond.amount">Montant</p><p class="loan-condition-value" data-i18n="loan.personal.cond.amount">1 000 € – 75 000 €</p></div>
+                <div class="loan-condition-item"><p class="loan-condition-label" data-i18n="loan.cond.duration">Durée</p><p class="loan-condition-value" data-i18n="loan.personal.cond.duration">12 – 84 mois</p></div>
+                <div class="loan-condition-item"><p class="loan-condition-label" data-i18n="loan.cond.rate">TAEG</p><p class="loan-condition-value" data-i18n="loan.personal.cond.rate">À partir de 3,5%</p></div>
+                <div class="loan-condition-item"><p class="loan-condition-label" data-i18n="loan.cond.response">Délai de réponse</p><p class="loan-condition-value" data-i18n="loan.personal.cond.response">24h ouvrées</p></div>
+              </div>
+            </div>
+            <a href="demande-de-pret.html" class="btn btn-primary" data-i18n="loan.cta">Faire une demande</a>
+          </div>
+          <div class="loan-visual">
+            <div class="cld-photo" data-cld="finavia/loans/personal" data-cld-w="1000" style="--cld-ratio:10/7; min-height:380px;" role="img" data-i18n-aria="loan.personal.imgalt" aria-label="Illustration prêt personnel">
+              <div class="cld-photo-placeholder">
+                <span class="cld-photo-placeholder-icon">👤</span>
+                <span class="cld-photo-placeholder-text" data-i18n="home.gallery.placeholder">Image à venir</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRÊT AUTO -->
+    <section class="loan-section" id="auto" style="background:var(--clr-bg-alt);">
+      <div class="container">
+        <div class="loan-layout reverse reveal">
+          <div class="loan-content">
+            <span class="loan-badge" data-i18n="loan.auto.badge">PRÊT AUTOMOBILE</span>
+            <h2 class="loan-title" data-i18n="loan.auto.title">Roulez vers votre prochain véhicule</h2>
+            <p class="loan-desc" data-i18n="loan.auto.desc">Que vous souhaitiez acquérir une voiture neuve, un véhicule d'occasion ou une moto, FINAVIA finance votre projet automobile avec des conditions avantageuses.</p>
+            <ul class="loan-features">
+              <li class="loan-feature"><div class="loan-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><span class="loan-feature-text" data-i18n="loan.auto.f1">Financement neuf et occasion</span></li>
+              <li class="loan-feature"><div class="loan-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><span class="loan-feature-text" data-i18n="loan.auto.f2">Montant jusqu'à 80 000 €</span></li>
+              <li class="loan-feature"><div class="loan-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><span class="loan-feature-text" data-i18n="loan.auto.f3">TAEG à partir de 2,9%</span></li>
+              <li class="loan-feature"><div class="loan-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><span class="loan-feature-text" data-i18n="loan.auto.f4">Durée de 24 à 84 mois</span></li>
+              <li class="loan-feature"><div class="loan-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><span class="loan-feature-text" data-i18n="loan.auto.f5">Décision rapide en 24h</span></li>
+            </ul>
+            <div class="loan-conditions">
+              <div class="loan-conditions-grid">
+                <div class="loan-condition-item"><p class="loan-condition-label" data-i18n="loan.cond.amount">Montant</p><p class="loan-condition-value" data-i18n="loan.auto.cond.amount">5 000 € – 80 000 €</p></div>
+                <div class="loan-condition-item"><p class="loan-condition-label" data-i18n="loan.cond.duration">Durée</p><p class="loan-condition-value" data-i18n="loan.auto.cond.duration">24 – 84 mois</p></div>
+                <div class="loan-condition-item"><p class="loan-condition-label" data-i18n="loan.cond.rate">TAEG</p><p class="loan-condition-value" data-i18n="loan.auto.cond.rate">À partir de 2,9%</p></div>
+                <div class="loan-condition-item"><p class="loan-condition-label" data-i18n="loan.cond.response">Délai de réponse</p><p class="loan-condition-value" data-i18n="loan.auto.cond.response">24h ouvrées</p></div>
+              </div>
+            </div>
+            <a href="demande-de-pret.html" class="btn btn-primary" data-i18n="loan.cta">Faire une demande</a>
+          </div>
+          <div class="loan-visual">
+            <div class="cld-photo" data-cld="finavia/loans/auto" data-cld-w="1000" style="--cld-ratio:10/7; min-height:380px;" role="img" data-i18n-aria="loan.auto.imgalt" aria-label="Illustration prêt auto">
+              <div class="cld-photo-placeholder">
+                <span class="cld-photo-placeholder-icon">🚗</span>
+                <span class="cld-photo-placeholder-text" data-i18n="home.gallery.placeholder">Image à venir</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRÊT TRAVAUX -->
+    <section class="loan-section" id="travaux">
+      <div class="container">
+        <div class="loan-layout reveal">
+          <div class="loan-content">
+            <span class="loan-badge" data-i18n="loan.travaux.badge">PRÊT TRAVAUX</span>
+            <h2 class="loan-title" data-i18n="loan.travaux.title">Transformez votre logement</h2>
+            <p class="loan-desc" data-i18n="loan.travaux.desc">Rénovation, extension, cuisine équipée, salle de bains, isolation énergétique... Le prêt travaux FINAVIA vous permet de transformer votre habitat sans puiser dans votre épargne.</p>
+            <ul class="loan-features">
+              <li class="loan-feature"><div class="loan-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><span class="loan-feature-text" data-i18n="loan.travaux.f1">Tous types de travaux acceptés</span></li>
+              <li class="loan-feature"><div class="loan-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><span class="loan-feature-text" data-i18n="loan.travaux.f2">Montant jusqu'à 75 000 €</span></li>
+              <li class="loan-feature"><div class="loan-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><span class="loan-feature-text" data-i18n="loan.travaux.f3">TAEG à partir de 3,2%</span></li>
+              <li class="loan-feature"><div class="loan-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><span class="loan-feature-text" data-i18n="loan.travaux.f4">Durée jusqu'à 84 mois</span></li>
+              <li class="loan-feature"><div class="loan-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><span class="loan-feature-text" data-i18n="loan.travaux.f5">Conseils personnalisés inclus</span></li>
+            </ul>
+            <div class="loan-conditions">
+              <div class="loan-conditions-grid">
+                <div class="loan-condition-item"><p class="loan-condition-label" data-i18n="loan.cond.amount">Montant</p><p class="loan-condition-value" data-i18n="loan.travaux.cond.amount">3 000 € – 75 000 €</p></div>
+                <div class="loan-condition-item"><p class="loan-condition-label" data-i18n="loan.cond.duration">Durée</p><p class="loan-condition-value" data-i18n="loan.travaux.cond.duration">12 – 84 mois</p></div>
+                <div class="loan-condition-item"><p class="loan-condition-label" data-i18n="loan.cond.rate">TAEG</p><p class="loan-condition-value" data-i18n="loan.travaux.cond.rate">À partir de 3,2%</p></div>
+                <div class="loan-condition-item"><p class="loan-condition-label" data-i18n="loan.cond.response">Délai</p><p class="loan-condition-value" data-i18n="loan.travaux.cond.response">24h ouvrées</p></div>
+              </div>
+            </div>
+            <a href="demande-de-pret.html" class="btn btn-primary" data-i18n="loan.cta">Faire une demande</a>
+          </div>
+          <div class="loan-visual">
+            <div class="cld-photo" data-cld="finavia/loans/travaux" data-cld-w="1000" style="--cld-ratio:10/7; min-height:380px;" role="img" data-i18n-aria="loan.travaux.imgalt" aria-label="Illustration prêt travaux">
+              <div class="cld-photo-placeholder">
+                <span class="cld-photo-placeholder-icon">🏠</span>
+                <span class="cld-photo-placeholder-text" data-i18n="home.gallery.placeholder">Image à venir</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRÊT IMMOBILIER -->
+    <section class="loan-section" id="immo" style="background:var(--clr-bg-alt);">
+      <div class="container">
+        <div class="loan-layout reverse reveal">
+          <div class="loan-content">
+            <span class="loan-badge" data-i18n="loan.immo.badge">PRÊT IMMOBILIER</span>
+            <h2 class="loan-title" data-i18n="loan.immo.title">Devenez propriétaire avec FINAVIA</h2>
+            <p class="loan-desc" data-i18n="loan.immo.desc">Achat de résidence principale, investissement locatif, résidence secondaire... FINAVIA vous accompagne dans votre projet immobilier avec des taux attractifs et un suivi personnalisé.</p>
+            <ul class="loan-features">
+              <li class="loan-feature"><div class="loan-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><span class="loan-feature-text" data-i18n="loan.immo.f1">Financement jusqu'à 1 000 000 €</span></li>
+              <li class="loan-feature"><div class="loan-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><span class="loan-feature-text" data-i18n="loan.immo.f2">Durée jusqu'à 25 ans</span></li>
+              <li class="loan-feature"><div class="loan-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><span class="loan-feature-text" data-i18n="loan.immo.f3">TAEG à partir de 1,8%</span></li>
+              <li class="loan-feature"><div class="loan-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><span class="loan-feature-text" data-i18n="loan.immo.f4">Assurance emprunteur incluse</span></li>
+              <li class="loan-feature"><div class="loan-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><span class="loan-feature-text" data-i18n="loan.immo.f5">Conseiller dédié</span></li>
+            </ul>
+            <div class="loan-conditions">
+              <div class="loan-conditions-grid">
+                <div class="loan-condition-item"><p class="loan-condition-label" data-i18n="loan.cond.amount">Montant</p><p class="loan-condition-value" data-i18n="loan.immo.cond.amount">50 000 € – 1 000 000 €</p></div>
+                <div class="loan-condition-item"><p class="loan-condition-label" data-i18n="loan.cond.duration">Durée</p><p class="loan-condition-value" data-i18n="loan.immo.cond.duration">5 – 25 ans</p></div>
+                <div class="loan-condition-item"><p class="loan-condition-label" data-i18n="loan.cond.rate">TAEG</p><p class="loan-condition-value" data-i18n="loan.immo.cond.rate">À partir de 1,8%</p></div>
+                <div class="loan-condition-item"><p class="loan-condition-label" data-i18n="loan.cond.response">Délai</p><p class="loan-condition-value" data-i18n="loan.immo.cond.response">48h ouvrées</p></div>
+              </div>
+            </div>
+            <a href="demande-de-pret.html" class="btn btn-primary" data-i18n="loan.cta">Faire une demande</a>
+          </div>
+          <div class="loan-visual">
+            <div class="cld-photo" data-cld="finavia/loans/immo" data-cld-w="1000" style="--cld-ratio:10/7; min-height:380px;" role="img" data-i18n-aria="loan.immo.imgalt" aria-label="Illustration prêt immobilier">
+              <div class="cld-photo-placeholder">
+                <span class="cld-photo-placeholder-icon">🏡</span>
+                <span class="cld-photo-placeholder-text" data-i18n="home.gallery.placeholder">Image à venir</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REGROUPEMENT DE CRÉDITS -->
+    <section class="loan-section" id="regroupement">
+      <div class="container">
+        <div class="loan-layout reveal">
+          <div class="loan-content">
+            <span class="loan-badge" data-i18n="loan.regroupement.badge">REGROUPEMENT DE CRÉDITS</span>
+            <h2 class="loan-title" data-i18n="loan.regroupement.title">Simplifiez vos remboursements</h2>
+            <p class="loan-desc" data-i18n="loan.regroupement.desc">Vous avez plusieurs crédits en cours ? Le regroupement de crédits FINAVIA vous permet de les fusionner en un seul prêt, avec une mensualité unique et souvent réduite.</p>
+            <ul class="loan-features">
+              <li class="loan-feature"><div class="loan-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><span class="loan-feature-text" data-i18n="loan.regroupement.f1">Réduction de mensualité jusqu'à 40%</span></li>
+              <li class="loan-feature"><div class="loan-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><span class="loan-feature-text" data-i18n="loan.regroupement.f2">Tous types de crédits regroupables</span></li>
+              <li class="loan-feature"><div class="loan-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><span class="loan-feature-text" data-i18n="loan.regroupement.f3">TAEG à partir de 2,9%</span></li>
+              <li class="loan-feature"><div class="loan-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><span class="loan-feature-text" data-i18n="loan.regroupement.f4">Durée adaptée à votre budget</span></li>
+              <li class="loan-feature"><div class="loan-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><span class="loan-feature-text" data-i18n="loan.regroupement.f5">Étude gratuite et sans engagement</span></li>
+            </ul>
+            <div class="loan-conditions">
+              <div class="loan-conditions-grid">
+                <div class="loan-condition-item"><p class="loan-condition-label" data-i18n="loan.cond.amount">Montant</p><p class="loan-condition-value" data-i18n="loan.regroupement.cond.amount">5 000 € – 150 000 €</p></div>
+                <div class="loan-condition-item"><p class="loan-condition-label" data-i18n="loan.cond.duration">Durée</p><p class="loan-condition-value" data-i18n="loan.regroupement.cond.duration">12 – 120 mois</p></div>
+                <div class="loan-condition-item"><p class="loan-condition-label" data-i18n="loan.cond.rate">TAEG</p><p class="loan-condition-value" data-i18n="loan.regroupement.cond.rate">À partir de 2,9%</p></div>
+                <div class="loan-condition-item"><p class="loan-condition-label" data-i18n="loan.cond.response">Délai</p><p class="loan-condition-value" data-i18n="loan.regroupement.cond.response">24h ouvrées</p></div>
+              </div>
+            </div>
+            <a href="demande-de-pret.html" class="btn btn-primary" data-i18n="loan.cta">Faire une demande</a>
+          </div>
+          <div class="loan-visual">
+            <div class="cld-photo" data-cld="finavia/loans/regroupement" data-cld-w="1000" style="--cld-ratio:10/7; min-height:380px;" role="img" data-i18n-aria="loan.regroupement.imgalt" aria-label="Illustration regroupement de crédits">
+              <div class="cld-photo-placeholder">
+                <span class="cld-photo-placeholder-icon">💳</span>
+                <span class="cld-photo-placeholder-text" data-i18n="home.gallery.placeholder">Image à venir</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-section">
+      <div class="container cta-inner">
+        <h2 class="section-title" data-i18n="cta.title">Prêt à financer votre projet ?</h2>
+        <p class="section-subtitle" data-i18n="cta.subtitle">Rejoignez plus de 50 000 clients satisfaits et obtenez votre financement rapidement.</p>
+        <div class="cta-buttons">
+          <a href="demande-de-pret.html" class="btn btn-primary btn-lg" data-i18n="cta.button">Faire une demande</a>
+          <a href="contact.html" class="btn btn-outline-white btn-lg" data-i18n="cta.button2">Nous contacter</a>
+        </div>
+        <p class="cta-note" data-i18n="cta.note">Sans engagement • Réponse en 24h • 100% Sécurisé</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo"><img src="assets/images/logo-full.webp" class="logo-full--sm" alt="FINAVIA"></a>
+          <p class="footer-tagline" data-i18n="footer.tagline">Votre partenaire financier de confiance</p>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-heading" data-i18n="footer.links">Liens rapides</h3>
+          <ul class="footer-links">
+            <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+            <li><a href="nos-prets.html" data-i18n="nav.loans">Nos Prêts</a></li>
+            <li><a href="comment-ca-marche.html" data-i18n="nav.howItWorks">Comment ça marche</a></li>
+            <li><a href="a-propos.html" data-i18n="nav.about">À Propos</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-heading" data-i18n="footer.services">Nos services</h3>
+          <ul class="footer-links">
+            <li><a href="#personnel" data-i18n="service.personal.title">Prêt Personnel</a></li>
+            <li><a href="#auto" data-i18n="service.auto.title">Prêt Automobile</a></li>
+            <li><a href="#travaux" data-i18n="service.travaux.title">Prêt Travaux</a></li>
+            <li><a href="#immo" data-i18n="service.immo.title">Prêt Immobilier</a></li>
+            <li><a href="#regroupement" data-i18n="service.regroupement.title">Regroupement</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-heading" data-i18n="footer.legal">Légal</h3>
+          <ul class="footer-links">
+            <li><a href="#" data-i18n="footer.privacy">Confidentialité</a></li>
+            <li><a href="#" data-i18n="footer.terms">CGU</a></li>
+            <li><a href="#" data-i18n="footer.legal_notice">Mentions légales</a></li>
+            <li><a href="#" data-i18n="footer.cookies">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-heading" data-i18n="footer.newsletter">Newsletter</h3>
+          <p class="footer-newsletter-desc" data-i18n="footer.newsletter.desc">Recevez nos offres et actualités.</p>
+          <div class="newsletter-form">
+            <input type="email" class="newsletter-input" id="newsletterEmail" data-i18n-placeholder="footer.newsletter.placeholder" placeholder="Votre email">
+            <button class="newsletter-btn" id="newsletterBtn" data-i18n="footer.newsletter.btn">S'abonner</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© <span id="currentYear">2024</span> FINAVIA. <span data-i18n="footer.rights">Tous droits réservés</span>.</p>
+        <div class="footer-bottom-links">
+          <a href="#" data-i18n="footer.privacy">Confidentialité</a>
+          <a href="#" data-i18n="footer.terms">CGU</a>
+          <a href="#" data-i18n="footer.legal_notice">Mentions légales</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/cloudinary.js"></script>
+</body>
+</html>

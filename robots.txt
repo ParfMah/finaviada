@@ -1,0 +1,9 @@
+# FINAVIA - robots.txt
+# Autorise l'indexation du site public, bloque l'espace admin
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /demande-de-pret.html
+
+Sitemap: https://www.finavia.eu/sitemap.xml

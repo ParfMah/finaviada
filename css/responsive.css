@@ -1,0 +1,882 @@
+/* =============================================
+   FINAVIA - RESPONSIVE.CSS
+   Media queries pour tous les breakpoints.
+   IMPORTANT : Conçu pour fonctionner dans les
+   5 langues (notamment l'allemand avec ses mots longs).
+   Testé sur : desktop, laptop, tablette, mobile.
+   ============================================= */
+
+/* =============================================
+   BREAKPOINTS UTILISÉS :
+   - xl  : 1280px+ (desktop large)
+   - lg  : 1024px  (laptop / tablette paysage)
+   - md  : 768px   (tablette portrait)
+   - sm  : 640px   (mobile large)
+   - xs  : 480px   (mobile standard)
+   - xxs : 360px   (mobile petit)
+   ============================================= */
+
+/* =============================================
+   1. GRAND ÉCRAN (max 1280px)
+   Ajustements pour écrans entre 1024px et 1280px
+   ============================================= */
+@media (max-width: 1280px) {
+  :root {
+    --max-width: 1200px;
+  }
+
+  /* Footer : moins de colonnes si espace restreint */
+  .footer-grid {
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  /* La colonne newsletter passe sur 2 colonnes */
+  .footer-col:last-child {
+    grid-column: span 2;
+  }
+}
+
+/* =============================================
+   2. LAPTOP / TABLETTE PAYSAGE (max 1024px)
+   ============================================= */
+@media (max-width: 1024px) {
+
+  /* --- Navigation --- */
+  /* Cache la nav desktop, affiche le hamburger */
+  .header-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Cache le bouton CTA desktop */
+  .header-actions .btn {
+    display: none;
+  }
+
+  /* --- Hero --- */
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    margin: 0 auto var(--sp-8);
+  }
+
+  .hero-ctas {
+    justify-content: center;
+  }
+
+  .hero-trust {
+    justify-content: center;
+  }
+
+  /* La carte du mini-carrousel reste visible sur tablette/mobile :
+     elle s'affiche désormais empilée sous le texte, centrée. */
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--sp-8);
+  }
+
+  /* --- Services grille --- */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* --- Statistiques --- */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+
+  .stat-item:nth-child(2)::after,
+  .stat-item:nth-child(4)::after {
+    display: none;
+  }
+
+  /* --- Étapes --- */
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps-grid::before {
+    display: none; /* Cache la ligne horizontale */
+  }
+
+  /* --- Témoignages --- */
+  .testimonials-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* --- Sécurité --- */
+  .security-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* --- Footer --- */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 3rem;
+  }
+
+  .footer-col:first-child {
+    grid-column: span 2;
+  }
+
+  .footer-col:last-child {
+    grid-column: span 2;
+  }
+
+  /* --- Page Prêts --- */
+  .loan-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .loan-layout.reverse {
+    direction: ltr;
+  }
+
+  /* --- Contact --- */
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  /* --- À propos : Notre histoire (texte + image) passe en 1 colonne --- */
+  .about-story-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  /* --- Contact : cartes "Nos bureaux" passent de 3 à 2 colonnes --- */
+  .office-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* --- Équipe --- */
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* --- Valeurs --- */
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* --- Avantages --- */
+  .advantages-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =============================================
+   3. TABLETTE PORTRAIT (max 768px)
+   ============================================= */
+@media (max-width: 768px) {
+
+  /* --- Typographie --- */
+  /* Adapte les tailles de police pour tablette */
+  .hero-title {
+    font-size: clamp(var(--text-2xl), 6vw, var(--text-4xl));
+  }
+
+  .section-title {
+    font-size: clamp(var(--text-xl), 4vw, var(--text-3xl));
+  }
+
+  /* --- Conteneur --- */
+  :root {
+    --container-padding: 1.25rem;
+  }
+
+  /* --- Galerie FINAVIA : 2 colonnes --- */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 130px;
+  }
+
+  /* --- Galerie bureaux (À propos) : 2 colonnes --- */
+  .office-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* --- Stats : 2 colonnes --- */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-item::after {
+    display: none; /* Plus de séparateurs verticaux */
+  }
+
+  /* Stats : bordures horizontales à la place */
+  .stat-item {
+    padding: var(--sp-6) var(--sp-4);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .stat-item:nth-child(odd) {
+    border-right: 1px solid rgba(255,255,255,0.1);
+  }
+
+  /* --- Services : 1 colonne --- */
+  .services-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  /* --- Étapes : 1 colonne --- */
+  .steps-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* --- Témoignages : 1 colonne --- */
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  /* --- Sécurité : 2 colonnes --- */
+  .security-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* --- Footer : compact, 2 colonnes ---
+     La marque (logo + tagline + réseaux sociaux) occupe toute la
+     largeur en haut ; les 4 autres blocs (liens, services, légal,
+     newsletter) se répartissent ensuite en grille 2×2, ce qui évite
+     d'empiler 5 blocs pleine largeur et rend le footer bien plus court. */
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem 1.5rem;
+  }
+
+  .footer-brand {
+    grid-column: span 2;
+  }
+
+  .footer-col:first-child,
+  .footer-col:last-child {
+    grid-column: span 1;
+  }
+
+  .footer-tagline {
+    max-width: 360px;
+  }
+
+  .footer-heading {
+    margin-bottom: var(--sp-3);
+  }
+
+  .footer-links {
+    gap: var(--sp-2);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--sp-3);
+  }
+
+  .footer-bottom-links {
+    justify-content: center;
+  }
+
+  /* --- Formulaire grille --- */
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- Formulaire multi-étapes : progress --- */
+  .progress-step-label {
+    display: none; /* Cache les labels sur mobile */
+  }
+
+  /* --- Récapitulatif formulaire --- */
+  .form-recap-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- Equipe : 2 colonnes --- */
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* --- Contact : cartes "Nos bureaux" passent en 1 colonne (empilées) --- */
+  .office-cards-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* --- Valeurs : 1 colonne --- */
+  .values-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* --- Avantages : 1 colonne --- */
+  .advantages-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* --- Prêts : conditions --- */
+  .loan-conditions-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-3);
+  }
+
+  /* --- Processus timeline --- */
+  .process-timeline::before {
+    left: 28px;
+  }
+
+  .process-step {
+    grid-template-columns: 56px 1fr;
+    gap: var(--sp-4);
+  }
+
+  .process-step-number {
+    width: 56px;
+    height: 56px;
+    font-size: var(--text-xl);
+  }
+
+  /* --- Toast : pleine largeur --- */
+  .toast {
+    left: var(--sp-4);
+    right: var(--sp-4);
+    max-width: none;
+  }
+
+  /* --- Boutons CTA --- */
+  .hero-ctas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* --- CTA section --- */
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* =============================================
+   4. MOBILE (max 640px)
+   ============================================= */
+@media (max-width: 640px) {
+
+  /* --- Header --- */
+  :root {
+    --header-height: 64px;
+  }
+
+  .logo-text {
+    font-size: var(--text-lg);
+  }
+
+  /* --- Footer : encore plus compact sur petit mobile --- */
+  .site-footer {
+    padding-top: 2.5rem;
+  }
+
+  .footer-bottom {
+    padding: var(--sp-4) 0;
+  }
+  /* --- Hero --- */
+  .hero {
+    min-height: auto;
+    padding: calc(var(--header-height) + 2rem) 0 4rem;
+  }
+
+  .hero-trust {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sp-3);
+  }
+
+  /* --- Légende du carrousel de fond : compacte sur mobile --- */
+  .hero-bg-caption-row {
+    margin-top: var(--sp-6);
+    padding-top: var(--sp-4);
+    justify-content: center;
+  }
+
+  .hero-bg-caption-icon {
+    display: none; /* Libère de la place sur très petit écran */
+  }
+
+  .hero-bg-caption {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* --- Mini-carrousel : légèrement plus compact --- */
+  .hero-mini-carousel {
+    max-width: 340px;
+  }
+
+  .hero-mini-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* --- Statistiques : 1 colonne --- */
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .stat-item {
+    border-right: none !important;
+  }
+
+  /* --- Sécurité : 1 colonne --- */
+  .security-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- Équipe : 1 colonne --- */
+  .team-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  /* --- Newsletter --- */
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-input {
+    width: 100%;
+  }
+
+  .newsletter-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* --- Boutons grand --- */
+  .btn-lg {
+    padding: 0.875rem 1.75rem;
+    font-size: var(--text-base);
+  }
+
+  /* --- Cartes --- */
+  .card {
+    padding: var(--sp-5);
+  }
+
+  /* --- Process timeline --- */
+  .process-step {
+    grid-template-columns: 48px 1fr;
+    gap: var(--sp-3);
+  }
+
+  .process-step-number {
+    width: 48px;
+    height: 48px;
+    font-size: var(--text-lg);
+  }
+
+  .process-timeline::before {
+    left: 24px;
+  }
+
+  /* --- Formulaire de demande --- */
+  .loan-form-wrapper {
+    padding: 1.5rem var(--container-padding);
+  }
+
+  .form-step-card {
+    padding: var(--sp-5);
+  }
+
+  .form-progress-steps {
+    gap: var(--sp-1);
+  }
+
+  .progress-step-num {
+    width: 28px;
+    height: 28px;
+    font-size: var(--text-xs);
+  }
+
+  /* --- Navigation form --- */
+  .form-nav {
+    flex-direction: column-reverse;
+  }
+
+  .form-nav .btn {
+    width: 100%;
+  }
+
+  /* --- Page hero --- */
+  .page-hero {
+    padding: calc(var(--header-height) + 2rem) 0 2.5rem;
+  }
+
+  /* --- Contact info block --- */
+  .contact-info-block {
+    padding: var(--sp-6);
+  }
+
+  /* --- Contact form card --- */
+  .contact-form-card {
+    padding: var(--sp-5);
+  }
+}
+
+/* =============================================
+   5. MOBILE STANDARD (max 480px)
+   ============================================= */
+@media (max-width: 480px) {
+
+  /* Réduit encore les marges */
+  :root {
+    --container-padding: 1rem;
+  }
+
+  /* --- Titre hero plus petit --- */
+  .hero-title {
+    font-size: clamp(1.625rem, 7vw, 2rem);
+  }
+
+  /* --- Statistiques : fond compact --- */
+  .stat-value {
+    font-size: clamp(var(--text-2xl), 7vw, var(--text-4xl));
+  }
+
+  /* --- Boutons --- */
+  .btn {
+    padding: 0.7rem 1.25rem;
+    font-size: var(--text-sm);
+  }
+
+  /* --- Sections padding --- */
+  .section {
+    padding: clamp(2.5rem, 6vw, 4rem) 0;
+  }
+
+  /* Tabs de langue mobile : 3 colonnes max */
+  .mobile-lang-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* --- Section badge réduit --- */
+  .section-badge {
+    font-size: 0.7rem;
+    padding: 0.375rem 0.875rem;
+  }
+
+  /* --- Prêts : loan badge --- */
+  .loan-badge {
+    font-size: 0.7rem;
+  }
+
+  /* --- Étapes processus --- */
+  .step-number {
+    width: 48px;
+    height: 48px;
+    font-size: var(--text-lg);
+  }
+}
+
+/* =============================================
+   6. TRÈS PETIT MOBILE (max 360px)
+   Samsung Galaxy S5, etc.
+   ============================================= */
+@media (max-width: 360px) {
+
+  :root {
+    --container-padding: 0.75rem;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .logo-text {
+    display: none; /* Cache le texte du logo, garde l'icône */
+  }
+
+  .btn {
+    padding: 0.625rem 1rem;
+    font-size: 0.8125rem;
+    min-width: 90px;
+  }
+
+  /* Contact detail */
+  .contact-detail {
+    gap: var(--sp-3);
+  }
+
+  .contact-detail-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* =============================================
+   7. GESTION SPÉCIFIQUE LANGUES LONGUES
+   L'allemand a des mots très longs.
+   Ces règles s'appliquent quand lang="de" est actif.
+   ============================================= */
+
+/* Appliqué par JS : <html lang="de"> */
+:lang(de) .btn,
+:lang(de) .nav-link,
+:lang(de) .mobile-nav-link,
+:lang(de) .service-card-title,
+:lang(de) .step-title,
+:lang(de) .advantage-title,
+:lang(de) .loan-title,
+:lang(de) .faq-question-text,
+:lang(de) .section-title {
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Navigation allemande : liens peuvent se réduire */
+:lang(de) .nav-list {
+  gap: clamp(var(--sp-3), 1.5vw, var(--sp-6));
+}
+
+:lang(de) .nav-link {
+  font-size: clamp(0.75rem, 1.1vw, var(--text-sm));
+}
+
+/* Portugais : aussi des mots relativement longs */
+:lang(pt) .btn,
+:lang(pt) .nav-link {
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+/* =============================================
+   8. ADMIN RESPONSIVE
+   Interface d'administration
+   ============================================= */
+@media (max-width: 1024px) {
+  /* Sidebar admin : collapse en overlay */
+  .admin-sidebar {
+    position: fixed !important;
+    left: -260px;
+    z-index: var(--z-nav);
+    transition: left 0.3s ease !important;
+  }
+
+  .admin-sidebar.open {
+    left: 0;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .admin-main {
+    margin-left: 0 !important;
+  }
+
+  .admin-topbar-toggle {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Dashboard cards : 1 colonne */
+  .admin-stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Table admin : scroll horizontal */
+  .admin-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Admin forms : 1 colonne */
+  .admin-form-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .admin-topbar {
+    padding: var(--sp-3) var(--sp-4) !important;
+  }
+
+  .admin-page-content {
+    padding: var(--sp-4) !important;
+  }
+}
+
+/* =============================================
+   9. OPTIMISATIONS PRINT
+   Styles pour l'impression (offres, contrats)
+   ============================================= */
+@media print {
+  /* Cache les éléments non pertinents */
+  .site-header,
+  .mobile-menu,
+  .hamburger,
+  .hero-scroll,
+  .cta-section,
+  .site-footer,
+  .btn,
+  .lang-switcher {
+    display: none !important;
+  }
+
+  /* Fond blanc, texte noir */
+  body {
+    background: white;
+    color: black;
+    font-size: 12pt;
+  }
+
+  /* Supprime les ombres à l'impression */
+  * {
+    box-shadow: none !important;
+  }
+
+  /* Affiche les liens */
+  a::after {
+    content: ' (' attr(href) ')';
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* Évite les coupures de page dans les cartes */
+  .card,
+  .loan-section,
+  .process-step {
+    page-break-inside: avoid;
+  }
+}
+
+/* =============================================
+   10. NAVIGATION SPÉCIALE ALLEMAND
+   Sur laptop, l'allemand a des mots très longs dans la nav.
+   Adapte les tailles automatiquement.
+   ============================================= */
+@media (max-width: 1180px) {
+  :lang(de) .nav-list {
+    gap: var(--sp-3);
+  }
+
+  :lang(de) .nav-link {
+    font-size: 0.8rem;
+    letter-spacing: -0.01em;
+  }
+}
+
+@media (max-width: 1060px) {
+  :lang(de) .header-nav {
+    display: none;
+  }
+
+  :lang(de) .hamburger {
+    display: flex;
+  }
+}
+
+/* =============================================
+   11. CORRECTIONS SCROLL HORIZONTAL
+   S'assure qu'aucun élément ne cause de défilement
+   horizontal sur mobile (toutes langues)
+   ============================================= */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Tous les éléments full-width restent dans le viewport.
+   IMPORTANT : .site-header est volontairement EXCLU de cette règle.
+   En effet, le header contient le menu mobile (position: fixed) et le
+   menu déroulant de langue (position: absolute, affiché sous le header).
+   Un "overflow-x: hidden" sur le header forcerait son overflow-y à
+   devenir "auto" (comportement du spec CSS), ce qui transforme le
+   header en conteneur de clipping et masque silencieusement ces deux
+   éléments. Le header reste donc en overflow visible (valeur par défaut),
+   sans risque de scroll horizontal puisque sa largeur est déjà contrainte
+   par "right: 0; left: 0;" en position fixed. */
+.hero,
+.stats-section,
+.section,
+.site-footer,
+.page-hero,
+.cta-section {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Le conteneur interne du header reste protégé contre le débordement
+   horizontal, sans affecter le menu mobile ni le menu de langue qui
+   doivent rester visibles au-delà des limites du header. */
+.header-inner {
+  max-width: 100vw;
+}
+
+/* Grilles : évite le débordement */
+.services-grid,
+.stats-grid,
+.steps-grid,
+.testimonials-grid,
+.security-grid,
+.team-grid,
+.values-grid,
+.advantages-grid,
+.footer-grid,
+.about-story-grid,
+.office-cards-grid {
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* Cellules de grille */
+.services-grid > *,
+.stats-grid > *,
+.steps-grid > *,
+.testimonials-grid > *,
+.security-grid > *,
+.team-grid > *,
+.values-grid > *,
+.advantages-grid > *,
+.footer-grid > *,
+.about-story-grid > *,
+.office-cards-grid > * {
+  min-width: 0;
+  overflow: hidden;
+}
